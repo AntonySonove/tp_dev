@@ -1,0 +1,48 @@
+body {
+	background-color: #222222;
+	color: #bbbbbb;
+}
+
+.qcm {
+	display: flex;
+	flex-wrap: wrap;
+	width: max-content;
+}
+.pikachu>.question>.answer :hover{
+	background-image: url("https://i1.wp.com/www.nintendo-insider.com/wp-content/uploads/2016/01/pikachu-banner.jpg?w=1920&ssl=1");
+	background-size: contain;
+}
+.question {
+	border-left: solid 3px;
+	border-left-color: inherit;
+	padding: 5px;
+	margin: 4px;
+	margin-top: 10px;
+}
+input {
+	background-color: gray;
+}
+
+.statement {
+	font-family: monospace;
+	font-weight: bold;
+}
+.qcm {
+	padding-top: 10px;
+}
+
+.star {
+	color:lime;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}

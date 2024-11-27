@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="questions.css">
+		<script type = "text/javascript" src = "answers.js" ></script>
+		<script>
+			function check_answer(s_id,correct_value) {
+				var input = document.getElementById(s_id);
+				if(input.value==correct_value) {
+					input.style.background = "rgb(100,255,100)";
+				} else {
+					input.style.background = "rgb(255,100,100)";
+				}
+			}
+			
+			function display_question(f,args,star=false) {
+				input_id++;
+				var s_id = 'input_'+input_id;
+				var result = f.apply(null,args);
+				var s = "";
+				s += '<div class="question">';
+				s += '<div class="statement">';
+				if(star) {
+					s += '<span class="star">*</span>';
+				}
+				s += f.name;
+				s += '(';
+				for(var i=0; i<args.length; i++) {
+					s += args[i]+',';
+				}
+				if(args.length > 0) {
+					s = s.substr(0,s.length-1);
+				}
+				s += ') = ?';
+				s += '</div>';
+				s += '<div class="answer">';
+				s += '<input type="number" id="'+s_id+'" ';
+				s += 'oninput="';
+				s += 'check_answer(\''+s_id+'\','+result+')"></input>';
+				s += '</div>';
+				s += '</div>';
+				document.write(s);
+			}
+		</script>
+	</head>
+<h1>Consignes</h1>
+<p>Trouver les résultats de toutes les cases.</p>
+<p><span class="star">*</span> : il faut faire le détail, instruction par instruction.</p>
+<strong>Les couleurs n'indiquent pas la difficulté, mais plutôt un thème similaire.</strong>
+
+<script>
+	var input_id=0;
+</script>
+<hr>
+<div class="qcm pikachu" style="border-color:red">
+<script>
+	display_question(pikachu,[1,1],true);
+	display_question(pikachu,[1,4],true);
+	display_question(pikachu,[4,10]);
+	display_question(pikachu,[3,0]);
+	display_question(pikachu,[0,3]);
+	display_question(pikachu,[10,11]);
+</script>
+</div>
+<div class="qcm" style="border-color:red">
+<script>
+	display_question(plafond,[2,3],true);
+	display_question(plafond,[3,2],true);
+	display_question(plafond,[6,6]);
+	display_question(plafond,[1,8]);
+	display_question(plafond,[8,0]);
+	display_question(plafond,[0,13]);
+</script>
+</div>
+<div class="qcm" style="border-color:red">
+<script>
+	display_question(tableur,[1,1],true);
+	display_question(tableur,[4,1],true);
+	display_question(tableur,[4,10]);
+	display_question(tableur,[3,0]);
+	display_question(tableur,[0,3]);
+	display_question(tableur,[10,11]);
+</script>
+</div>
+<div class="qcm" style="border-color:red">
+<script>
+	display_question(lol,[0,7],true);
+	display_question(lol,[2,3],true);
+	display_question(lol,[3,2]);
+	display_question(lol,[10,10]);
+	display_question(lol,[65,2]);
+	display_question(lol,[4,2]);
+</script>
+</div>
+<div class="qcm" style="border-color:red">
+<script>
+	display_question(wolverine,[1,3],true);
+	display_question(wolverine,[2,0],true);
+	display_question(wolverine,[5,1],true);
+	display_question(wolverine,[2,3]);
+	display_question(wolverine,[7,9]);
+	display_question(wolverine,[8,8]);
+	display_question(wolverine,[12,12]);
+	
+</script>
+</div>
+<div class="qcm" style="border-color:red">
+<script>
+	display_question(ventilateur,[2,3],true);
+	display_question(ventilateur,[4,5],true);
+	display_question(ventilateur,[0,12]);
+	display_question(ventilateur,[12,0]);
+	display_question(ventilateur,[78,65]);
+	display_question(ventilateur,[1,15]);
+</script>
+</div>
+<div class="qcm" style="border-color:red">
+<script>
+	display_question(bob,[1,1,1],true);
+	display_question(bob,[2,1,3],true);
+	display_question(bob,[0,4,5]);
+	display_question(bob,[4,5,0]);
+	display_question(bob,[4,0,5]);
+	display_question(bob,[4,2,3]);
+	display_question(bob,[10,2,5]);
+</script>
+</div>
+<hr>
+<div class="qcm" style="border-color:orange">
+<script>
+	display_question(calcul,[0]);
+	display_question(calcul,[1]);
+	display_question(calcul,[2]);
+	display_question(calcul,[3]);
+	display_question(calcul,[4]);
+	display_question(calcul,[6]);
+</script>
+</div>
+<div class="qcm" style="border-color:orange">
+<script>
+	display_question(python,[0]);
+	display_question(python,[1]);
+	display_question(python,[2]);
+	display_question(python,[3]);
+	display_question(python,[4]);
+	display_question(python,[6]);
+</script>
+</div>
+<hr>
+<div class="qcm" style="border-color:yellow">
+<script>
+	display_question(erogahtyp,[1]);
+	display_question(erogahtyp,[2]);
+	display_question(erogahtyp,[3]);
+	display_question(erogahtyp,[4]);
+	display_question(erogahtyp,[5]);
+	display_question(erogahtyp,[6]);
+	document.write("<br/>");
+	display_question(erogahtyp,[7]);
+	display_question(erogahtyp,[8]);
+	display_question(erogahtyp,[9]);
+	display_question(erogahtyp,[10]);
+	display_question(erogahtyp,[11]);
+	display_question(erogahtyp,[12]);
+</script>
+</div>
+<div class="qcm" style="border-color:yellow">
+<script>
+	display_question(pythagore,[1,1]);
+	display_question(pythagore,[1,3]);
+	display_question(pythagore,[1,50]);
+	display_question(pythagore,[9,4]);
+	display_question(pythagore,[21,4]);
+	display_question(pythagore,[100,5]);
+	display_question(pythagore,[1,1234]);
+</script>
+</div>
+<div class="qcm" style="border-color:yellow">
+<script>
+	display_question(aceeilnrtt,[1]);
+	display_question(aceeilnrtt,[4]);
+	display_question(aceeilnrtt,[8]);
+	display_question(aceeilnrtt,[10]);
+	display_question(aceeilnrtt,[80]);
+	display_question(aceeilnrtt,[128]);
+	display_question(aceeilnrtt,[16]);
+</script>
+</div>
+<hr>
+<div class="qcm" style="border-color:green">
+<script>
+	display_question(micmath,[1,2]);
+	display_question(micmath,[2,2]);
+	display_question(micmath,[3,2]);
+	display_question(micmath,[4,2]);
+	display_question(micmath,[256,2]);
+	display_question(micmath,[500,2]);
+</script>
+</div>
+<div class="qcm" style="border-color:green">
+<script>
+	display_question(micmath,[1,5]);
+	display_question(micmath,[4,5]);
+	display_question(micmath,[5,5]);
+	display_question(micmath,[20,5]);
+	display_question(micmath,[25,5]);
+	display_question(micmath,[500,5]);
+</script>
+</div>
+<div class="qcm" style="border-color:green">
+<script>
+	display_question(stylo,[1,1]);
+	display_question(stylo,[1,10]);
+	display_question(stylo,[2,2]);
+	display_question(stylo,[2,10]);
+	display_question(stylo,[5,3]);
+	display_question(stylo,[10,4]);
+</script>
+</div>
+<div class="qcm" style="border-color:green">
+<script>
+	display_question(crayon,[1,1]);
+	display_question(crayon,[1,10]);
+	display_question(crayon,[2,2]);
+	display_question(crayon,[2,10]);
+	display_question(crayon,[5,3]);
+	display_question(crayon,[10,4]);
+</script>
+</div>
+<div class="qcm" style="border-color:green">
+<script>
+	display_question(minecraft,[0]);
+	display_question(minecraft,[1]);
+	display_question(minecraft,[2]);
+	display_question(minecraft,[3]);
+	display_question(minecraft,[4]);
+	display_question(minecraft,[10]);
+</script>
+</div>
+<div class="qcm" style="border-color:green">
+<script>
+	display_question(nenio,[0]);
+	display_question(nenio,[1]);
+	display_question(nenio,[2]);
+	display_question(nenio,[5]);
+	display_question(nenio,[10]);
+	display_question(nenio,[123321]);
+</script>
+</div>
+<hr>
+<div class="qcm" style="border-color:blue">
+<script>
+	display_question(carapuceSamourai,[0]);
+	display_question(carapuceSamourai,[1]);
+	display_question(carapuceSamourai,[2]);
+	display_question(carapuceSamourai,[3]);
+	display_question(carapuceSamourai,[5]);
+	display_question(carapuceSamourai,[456789]);
+</script>
+</div>
+<div class="qcm" style="border-color:blue">
+<script>
+	display_question(bouteilleDEau,[0]);
+	display_question(bouteilleDEau,[1]);
+	display_question(bouteilleDEau,[2]);
+	display_question(bouteilleDEau,[-50]);
+	display_question(bouteilleDEau,[20]);
+	display_question(bouteilleDEau,[-12396]);
+</script>
+</div>
+<div class="qcm" style="border-color:blue">
+<script>
+	display_question(spiderman,[0]);
+	display_question(spiderman,[1]);
+	display_question(spiderman,[2]);
+	display_question(spiderman,[50]);
+	display_question(spiderman,[20]);
+	display_question(spiderman,[12396]);
+</script>
+</div>
+<hr>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(az,[0]);
+	display_question(az,[1]);
+	display_question(az,[2]);
+	display_question(az,[20]);
+	display_question(az,[50]);
+	display_question(az,[666]);
+</script>
+</div>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(er,[0]);
+	display_question(er,[1]);
+	display_question(er,[2]);
+	display_question(er,[3]);
+	display_question(er,[4]);
+	display_question(er,[5]);
+</script>
+</div>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(ty,[0]);
+	display_question(ty,[1]);
+	display_question(ty,[2]);
+	display_question(ty,[20]);
+	display_question(ty,[50]);
+	display_question(ty,[666]);
+</script>
+</div>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(ui,[0]);
+	display_question(ui,[1]);
+	display_question(ui,[2]);
+	display_question(ui,[20]);
+	display_question(ui,[50]);
+	display_question(ui,[100]);
+</script>
+</div>
+</div>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(op,[0]);
+	display_question(op,[1]);
+	display_question(op,[2]);
+	display_question(op,[5]);
+	display_question(op,[10]);
+	display_question(op,[100]);
+</script>
+</div>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(qs,[1]);
+	display_question(qs,[2]);
+	display_question(qs,[3]);
+	display_question(qs,[14]);
+	display_question(qs,[100]);
+	display_question(qs,[1000]);
+</script>
+</div>
+<div class="qcm" style="border-color:#8A2BE2">
+<script>
+	display_question(df,[1,1]);
+	display_question(df,[2,4]);
+	display_question(df,[3,1]);
+	display_question(df,[14,3]);
+	display_question(df,[100,104]);
+	display_question(df,[500,101]);
+</script>
+</div>
+<hr>
+<div class="qcm" style="border-color:#FF00FF">
+<script>
+	display_question(gh,[1,1]);
+	display_question(gh,[1,2]);
+	display_question(gh,[1,3]);
+	display_question(gh,[2,6]);
+	display_question(gh,[3,7]);
+	display_question(gh,[123,456]);
+</script>
+</div>
+<div class="qcm" style="border-color:#FF00FF">
+<script>
+	display_question(jk,[1,1]);
+	display_question(jk,[1,2]);
+	display_question(jk,[1,3]);
+	display_question(jk,[3,6]);
+	display_question(jk,[19,7]);
+	display_question(jk,[123,456]);
+</script>
+</div>
+<div class="qcm" style="border-color:#FF00FF">
+<script>
+	display_question(lm,[1,1]);
+	display_question(lm,[1,2]);
+	display_question(lm,[1,3]);
+	display_question(lm,[2,6]);
+	display_question(lm,[3,7]);
+	display_question(lm,[123,456]);
+</script>
+</div>
+<div class="qcm" style="border-color:#FF00FF">
+<script>
+	display_question(wx,[1,0]);
+	display_question(wx,[1,1]);
+	display_question(wx,[1,3]);
+	display_question(wx,[7,1]);
+	display_question(wx,[10,3]);
+	display_question(wx,[1235,4]);
+</script>
+</div>
+<div class="qcm" style="border-color:#FF00FF">
+<script>
+	display_question(cv,[1,1]);
+	display_question(cv,[2,1]);
+	display_question(cv,[3,1]);
+	display_question(cv,[15,1]);
+	display_question(cv,[7,2]);
+	display_question(cv,[123456,4]);
+</script>
+</div>
+</body>
+</html>
