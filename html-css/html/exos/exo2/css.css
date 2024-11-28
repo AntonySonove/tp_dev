@@ -1,0 +1,24 @@
+h1{
+    color: blue;
+}
+h1:hover{
+    color: green;
+}
+p:active{
+    background-color: gray;
+}
+a:link{
+    color: orange;
+}
+a:visited{
+    color: lightgray;
+}
+img:hover{
+    display: none;
+    height: 0px;
+}
+/*
+:first-child(odd){}
+:nth-child(3n+4){}
+:last-child(2n+3){}
+*/

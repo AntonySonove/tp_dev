@@ -1,0 +1,30 @@
+html, body {
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: rgb(156, 76, 231);
+    display: flex;
+    justify-content: center;
+    margin: 3em;
+}
+
+div
+{
+    height: 150px;
+    width: 300px;
+    background-color: rgb(63, 127, 184);
+    align-self: center;
+    /* ombre blanche et noir */
+    box-shadow: -7px -7px 20px #FFFFFF, 7px 7px 20px #000000;
+}
+
+/*background-image: linear-gradient(to left botom, blue %, yellow %)
+width: px
+height: px
+position: relative
+top: px
+left: px

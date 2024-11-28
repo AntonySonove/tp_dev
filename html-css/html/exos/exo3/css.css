@@ -1,0 +1,13 @@
+li:nth-child(even){
+    color: blue;
+}
+ul:hover li:nth-child(even){
+    color: black;
+}
+ul:hover li:nth-child(odd){
+    color: blue;
+}
+/*Dans une liste survolée (ul:hover), on s'intéresse aux li pairs (li:nth-child(even))*/
+
+/*box-shadow : 6px 6px 10px black
+/*text-shadow
