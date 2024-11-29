@@ -1,0 +1,25 @@
+.background_blue{
+    background: lightblue
+}
+.typo_red{
+    color: red;
+}
+.typo_green{
+    color: green;
+}
+
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+th{
+    border: solid, black, 1px;
+}
+tr{
+    border: solid, black, 1px;
+    background: beige;
+}
+td{
+    border: solid, black, 1px;
+}

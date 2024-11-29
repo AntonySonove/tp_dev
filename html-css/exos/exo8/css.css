@@ -1,0 +1,30 @@
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+.borderviolet{
+    border: solid, blueviolet, 2px;
+}
+.backgroundblue{
+    background: lightblue;
+}
+.typoviolet{
+    color: blueviolet;
+    font-weight: bold;
+}
+
+caption{
+    font-weight: bold;
+}
+th{
+    border: solid, black ,1px
+}
+tr{
+    border: solid, black 1px;
+}
+td{
+    border: solid, black, 1px
+    
+}
+/*rowspan
+colspan

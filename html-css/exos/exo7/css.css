@@ -14,7 +14,7 @@ div{
     background-image: linear-gradient(to bottom, white, rgba(0, 0, 0, 0.5));
 }
 #rose{
-    background-image: radial-gradient(lightblue 20%,pink 80%);
+    background-image: radial-gradient(lightblue,pink);
 }
 #ronds{
     background-image: repeating-radial-gradient(white, black 10px);
@@ -22,3 +22,11 @@ div{
 #ronds:hover{
     background-image: repeating-radial-gradient(black, white 10px);
 }
+
+/*<table>
+    <tr> ligne
+        <td> cellule
+        <th> entête
+        <caption> légende
+
+        border: dashed blue 5px
