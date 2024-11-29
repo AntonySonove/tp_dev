@@ -13,6 +13,9 @@ table{
     border-collapse: collapse;
     text-align: center;
 }
+caption{
+    font-weight: bold;
+}
 th{
     border: solid, black, 1px;
 }
@@ -23,3 +26,13 @@ tr{
 td{
     border: solid, black, 1px;
 }
+
+/*<form method="POST" action="monProgram.php">
+attribut method post
+attribut action
+
+<input type="text" name="prenom" placeholder="entrer un prénom">
+attribut name, value, placeholder, maxlength, minlength, size, id, required, autofocus, password, number
+autre type : email
+
+<label for=prenom">Prénom</label>

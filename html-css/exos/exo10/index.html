@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/> 
+        <title>exo10</title>
+        <link rel="stylesheet" href="css.css">
+    </head>
+    <body>
+        <form action="POST">
+            <fieldset>
+                <legend>Info personnelles</legend>
+                <div>
+                    <label for="prenom">Prénom:</label><br>
+                    <input type="text" name="prenom" placeholder="Ex: Jacques" minlength="2" maxlength="20">  
+                </div>
+
+                <div>
+                    <label for="nom">Nom:</label><br>
+                    <input type="text" name="nom" placeholder="Ex: Dubois" minlength="2" maxlength="20">
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label><br>
+                    <input type="text" email="email" placeholder="Ex: monMail@FAI.com">
+                </div>
+
+                <div>
+                    <label for="telephone">Numéro:</label><br>
+                    <input type="number" telephone="telephone" placeholder="Ex: 00 11 22 33 44">
+                </div>
+                <div>
+                    <label for="password">Mot de passe</label><br>
+                    <input type="password" password="password" placeholder="Ex: kfDm8'9q07q!" minlength="8" maxlength="30">
+                </div>
+                <div>
+                    <label for="number">Age</label><br>
+                    <input type="number" age="age" placeholder="Ex: 18">
+                </div>
+                <div classe="laisser_un_commentaire">
+                    <label for="zone de zone_de_texte">Laisser un commentaire:</label><br>
+                    <textarea cols="50" rows="10" placeholder="j'adore ce que vous faites !"></textarea>
+                </div>
+                <div>
+                    <label for="date">Date du commentaire</label>
+                    <input type="date" id="date"><br>
+                    <label for="ma photo">Ma photo</label>
+                    <input type="file" name="ma photo" id="ma photo" accept=".jpg, .png, .gif">
+                </div>
+            </fieldset> 
+            <fieldset>
+                <legend>Vous préferez</legend>  
+                <div>    
+                    <input type="checkbox" name="le html" id="le html">
+                    <label for="le html">Le HTML</label><br>
+                    <input type="checkbox" name="le css" id="le css">
+                    <label for="le css">Le CSS</label><br>
+                    <input type="checkbox" name="le javascript" id="le javascript">
+                    <label for="le javascript">Le JavaScript</label><br>
+                    <input type="checkbox" name="ne rien faire" id="ne rien faire">
+                    <label for="ne rien faire">Ne rien raire</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Vous vous levez</legend>
+                <div>
+                    <input type="radio" name="le matin" id="le matin">
+                    <label for="le matin">Le matin</label><br>
+                    <input type="radio" name="le midi" id="le midi">
+                    <label for="le midi">Le midi</label><br>
+                    <input type="radio" name="le soir" id="le soir">
+                    <label for="le soir">Le soir</label><br>
+                    <input type="radio" name="en retard" id="en retard">
+                    <label for="en retard">En retard !</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Fin du formulaire</legend>
+                <div>
+                    <label for="liste">Choisissez</label>
+                    <select name="liste" id="liste" placeholder="choisissez">
+                        <option value="mon choix">Mon choix</option>
+                        <label for="groupe 1"></label>
+                        <optgroup label="mon choix">
+                            <option value="choix 1">Choix 1</option>
+                        </optgroup>
+                        <label for="groupe 2"></label>
+                        <optgroup label="mon choix 2">
+                            <option value="choix 2">Choix 2</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

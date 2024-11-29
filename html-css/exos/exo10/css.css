@@ -1,0 +1,40 @@
+
+
+/*<form method="POST" action="monProgram.php">
+attribut method post
+attribut action
+
+<input type="text" name="prenom" placeholder="entrer un prénom">
+
+    attribut name, value, placeholder, maxlength, minlength, size, id, required, autofocus, password, number, file
+
+    
+
+    types: email, number,password, 
+
+    date, time, datetime, datetime-local, month, week, 
+
+    file (attribut: png, etc...)
+
+    checkbox, radio, 
+
+    submit, image, reset, button (ajouter l'attribut value)
+
+
+
+<select>
+    <optgroupe>
+        <option>
+
+
+
+<label for="prenom">Prénom</label>
+
+<textarea placeholder="Un trèe long texte"></textarea>
+attributs cols, rows
+
+<fieldset>
+    <legend>Je suis une légende</legend>
+    <label for="prenom">Prénom</label>
+    <input type="text" name="prenom" placeholder="entrer un prénom">
+</fieldset>
