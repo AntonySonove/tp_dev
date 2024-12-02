@@ -1,0 +1,49 @@
+.sans_puces {
+    list-style-type: none;
+}
+.centrer {
+    text-align: center;
+    display: block;
+    margin: auto; 
+}
+.align_right{
+    text-align: end;
+}
+.centrer_img {
+    display: block;
+    margin: auto;
+    border: #8D99AE solid 2px;
+}
+.border {
+    border: solid 1px;
+}
+.red :link {
+    color: #D90429;
+}
+.gray :visited{
+    color: grey;
+}
+.color :hover{
+    color: #2B2D42;
+}
+.redstar{
+    color: red;
+}
+
+
+
+body{
+    background-image: radial-gradient(at top,  #CCDAE0, #EDF2F4);
+}
+h1{
+    color: #EF233C;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 300%;
+}
+h3{
+    text-decoration: dashed underline 2px;
+    font-weight: bold;
+    color: #2b2d42;
+    font-size: 200%;
+}

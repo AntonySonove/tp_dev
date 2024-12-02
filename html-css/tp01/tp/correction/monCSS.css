@@ -1,0 +1,70 @@
+body {
+    background-image: radial-gradient(circle at top, #CCDAE0, #EDF2F4);
+}
+
+/*Aligne les éléments du header au centre*/
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #EF233C;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: Impact;
+}
+
+h3 {
+    color: #2B2D42;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: underline dashed;
+    /*Souligne en pointillé*/
+}
+
+article {
+    border: black 1px solid;
+}
+
+article img {
+    border: solid 2px #8D99AE;
+}
+
+ul {
+    list-style: none;
+    /*Enlève les puces*/
+}
+
+footer {
+    text-align: right;
+    /*Aligne le menu à droite*/
+}
+
+/*Lien non visité*/
+a:link {
+    color: #D90429;
+}
+
+/*Lien visité*/
+a:visited {
+    color: grey;
+}
+
+/*Au survol d'un lien*/
+a:hover {
+    color: #2B2D42;
+}
+
+/*Classe de centrage d'éléments*/
+.wrapper {
+    text-align: center;
+}
+
+/*Classe pour mettre un texte en rouge*/
+.red {
+    color: red;
+}
+
+ul{
+    padding: 0;
+}
