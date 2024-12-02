@@ -8,14 +8,11 @@ form{
     text-align: center;
     align-items: center;
 }
-.pseudo{
+.pseudo, #checkbox{
     margin-left: 30px;
 }
 .champs{
     margin-left: 20px;
-}
-#checkbox{
-    margin-left: 30px;
 }
 .label_checkbox{
     margin-left: 10px;
