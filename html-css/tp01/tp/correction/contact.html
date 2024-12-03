@@ -1,0 +1,56 @@
+<!doctype HTML>
+
+<html lang="fr">
+    <head>
+    <meta charset="utf-8">
+    <title>TP page web</title>
+    <link rel="stylesheet" href="monCSS.css" >
+    </head>
+    <body>
+        <header>
+            <img src="https://picsum.photos/800/200?random=2" alt="Bannière"/>
+            <h1>Bienvenue sur mon site !</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="">Galerie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form method="POST" action="monProgramme.php">
+                <fieldset>
+                    <legend>Contact</legend>
+                    <div>
+                        <label for="name">Nom:<span class="red">*</span></label>
+                        <input type="text" name="name" placeholder="Ex: Robert" maxlength="20" minlength="2" id="name" required/>
+                    </div>
+                    <div>
+                        <label for="mail">E-mail:<span class="red">*</span></label>
+                        <input type="email" name="mail" placeholder="Ex: monMail@dev.com" id="mail" required/>
+                    </div>
+                    <div>
+                        <label for="comment">Laissez un commentaire:</label><br/>
+                        <textarea name="comment" id="comment" rows="10" cols="70" placeholder="Je dépose mon avis :)"></textarea>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkboxConfirm" checked/><label for="checkboxConfirm">Envoyer une copie par E-mail !</label>
+                    </div>
+                    <div>
+                        <input type="submit" value="Envoyer"/><input type="reset" value="Reset"/>
+                    </div>
+                </fieldset> 
+            </form>
+        </main>
+        <footer>
+            <ul>
+                <li><a href="nada">Menu 1</a></li>
+                <li><a href="nada">Menu 2</a></li>
+                <li><a href="nada">Menu 3</a></li>
+                <li><a href="nada">Menu 4</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

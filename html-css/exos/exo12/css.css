@@ -1,0 +1,30 @@
+form{
+    width: 400px;
+    height: 250px;
+    border: solid 1px black;
+    background: lightgrey;
+}
+.center{
+    text-align: center;
+    align-items: center;
+}
+.pseudo, #checkbox{
+    margin-left: 30px;
+}
+.champs{
+    margin-left: 20px;
+}
+.label_checkbox{
+    margin-left: 10px;
+}
+.boutons{
+    margin-top: 20px;
+    padding: 5px;
+}
+.espace_bas{
+    margin-bottom: 10px;
+}
+.couleur_boutons:hover{
+    background-color: black;
+    color: white
+}

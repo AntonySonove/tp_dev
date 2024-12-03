@@ -1,0 +1,33 @@
+body{
+    background: blueviolet;
+    margin: 0px;
+}
+p{
+    background-color: lightgrey;
+    border: solid lightgreen 2px;
+}
+
+.hauteur{
+    height: 100px;
+    padding: 20px;
+    margin: 0px;
+}
+.largeur{
+    width: 50%;
+    padding: 1.2em;
+    margin: 20px 5px;
+}
+.haut_larg{
+    width: 200px;
+    height: 200px;
+    padding: -30px;
+    margin: auto;
+}
+
+/*padding = marge interieure
+margin = paragraphe extérieur
+
+overflow : hidden
+scroll
+*/
+

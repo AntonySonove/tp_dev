@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/> 
+        <title>formulaire TP 01</title>
+        <link rel="stylesheet" href="css.css">
+    </head>
+    <body>
+        <header>
+            <div class="centrer">
+                <img src="https://picsum.photos/800/200
+                " alt="montagnes"/>
+                <h1>Bienvenue sur mon site !</h1>
+                <ul class="sans_puces  gray red color">
+                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="index.html#ancre">Blog</a></li>
+                    <li><a href="Galerie.html">Galerie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </header>   
+            <main>
+                <form method="POST">
+                    <fieldset>
+                        <legend>Contact</legend>
+
+                        <div>
+                            <label for="nom">Nom:<span class="redstar">*</span></label>
+                            <input type="text" name= "nom" id="nom" placeholder="Ex: Robert">
+                        </div>
+
+                        <div>
+                            <label for="mail">E-mail:<span class="redstar">*</span></label>
+                            <input type="email" name= "mail" id="mail" placeholder="Ex: monMail@dev.com">
+                        </div>
+
+                        <div>
+                            <label for="commentaire">Laissez un commentaire:</label><br>
+                            <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Je dépose mon avis :)"></textarea>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="cpoie_email" id="copie_email" checked>
+                            <label for="copie_email">Envoyer une copie par E-mail !</label>
+                        </div>
+
+                        <div>
+                            <input type="submit" name="envoyer" id="envoyer" value="Envoyer">
+                            <input type="reset" name="reset" id="reset" value="Reset">
+                        </div>
+                    </fieldset>
+                </form>
+        </main>
+            <footer>
+                <div class="align_right">
+                    <ul class="sans_puces gray red color">
+                        <li><a href="https://pixabay.com/fr/images/search/montagne/">Menu 1</a></li>
+                        <li><a href="https://pixabay.com/fr/images/search/montagne/">Menu 2</a></li>
+                        <li><a href="https://pixabay.com/fr/images/search/montagne/">Menu 3</a></li>
+                        <li><a href="https://pixabay.com/fr/images/search/montagne/">Menu 4</a></li>
+                    </ul>
+                </div>
+        </footer>
+    </body>
+</html>
