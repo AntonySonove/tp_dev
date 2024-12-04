@@ -1,0 +1,27 @@
+a{
+    background: rgb(119, 81, 255);
+    color: white;
+    border: solid 1px black;
+}
+a:hover{
+    background: white;
+    color: rgb(119, 81, 255);
+}
+li, ul{
+    list-style: none;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    flex-direction: column;
+    display: none;
+}
+nav ul li:hover{
+    display: block;
+}
+.menu:hover{
+    display: block
+}
