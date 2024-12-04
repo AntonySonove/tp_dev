@@ -1,0 +1,71 @@
+/*textes*/
+
+h1{
+    text-align: center;
+}
+#container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.bordure_bleu{
+    border: solid 1px blue;
+    border-radius: 15px;
+    padding: 10px;
+}
+#textes{
+    display: flex;
+    flex-direction: column;
+}
+p{
+    grid-column: 1;
+    width: 50%;
+}
+.fond_gris{
+    background-color: lightgrey;
+    align-self: flex-end;
+    padding: 10px;
+}
+
+
+/*liste utilisateur*/
+
+#liste_utilisateurs{
+    grid-column: 2;
+    width: 180px;
+    height: 150px;
+    margin-left: 100px; 
+    align-self: center;
+}
+h3{
+    text-align: center;
+}
+ul li{
+    list-style: none;
+}
+ul{
+    text-align: left;
+    
+}
+li{
+    margin-left: -20%;
+}
+
+
+/*tchat*/
+
+#tchat{
+    grid-column: 1;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+#envoyer, #message{
+    height: 40px;
+}
+#message{
+    width: 100%;
+    border-radius: 10px;
+}
+
