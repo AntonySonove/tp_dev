@@ -1,0 +1,99 @@
+/*#ex{
+    transition-property: ;
+    transition-duration: ;
+    transition-delay: ;
+    transition-timing-function: ;
+}*/
+
+
+/*titre*/
+
+h1{
+    color: red;
+    transition-duration: 2s;
+    animation: titre 2s;
+}
+h1:hover{
+    
+    transition: 1s linear;
+    color: green;
+    
+}
+@keyframes titre{
+    0%{
+        transform: translateX(-100px) translateY(-100px);
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+    }
+}
+
+
+
+/*paragraphe*/
+
+p{
+    animation: paragraphe 1s;
+}
+p:active{
+    transform: rotate(2turn);
+    transition: 2s linear;
+}
+@keyframes paragraphe{
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+/*bouton 1*/
+
+#bouton1:hover{ 
+    animation: bouton1 0.2s infinite;
+}
+@keyframes bouton1{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+
+
+/*bouton2*/
+
+#bouton2:hover{
+    animation : bouton2 0.2s infinite alternate;
+}
+@keyframes bouton2{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+/*bouton3*/
+
+#bouton3:hover{
+    animation: bouton3 0.5s linear infinite alternate;
+}
+@keyframes bouton3{
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.3
+    }
+}

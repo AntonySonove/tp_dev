@@ -1,0 +1,19 @@
+/*#ex{
+    transition-property: ;
+    transition-duration: ;
+    transition-delay: ;
+    transition-timing-function: ;
+}*/
+
+h1{
+    color: red;
+}
+h1:hover{
+    transition: 1s;
+    color: green;
+    transition-timing-function: linear;
+}
+p:active{
+    transform: rotate(2turn);
+    transition: 2s linear;
+}

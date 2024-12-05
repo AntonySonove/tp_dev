@@ -1,0 +1,54 @@
+/*grid et flex*/
+#container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-direction: column;
+}
+#nom_prenom{
+    grid-column: 1;
+    grid-row: 1;
+    grid-column: span 2;
+    background-color: lightgray;
+}
+#description{
+    grid-column: 1;
+    grid-row: 2;
+    background-color: lightblue;
+}
+#photo{
+    grid-column: 2;
+    grid-row: 2;
+    background-color: lightgray;
+}
+#experiences{
+    grid-column: 1;
+    grid-row: 3;
+    background-color: lightgray;
+    grid-row: span 2;
+}
+#contact{
+    grid-column: 2;
+    grid-row: 3;
+    background-color: lightblue;
+}
+#competences{
+    grid-column: 2;
+    grid-row: 4;
+    background-color: gray;;
+}
+#formation{
+    grid-column: 1;
+    grid-row: 5;
+    background-color: gray;
+}
+#hobbies{
+    grid-column: 2;
+    grid-row: 5;
+    background-color: lightblue;
+    display:inline;
+}
+.liste_inline li{
+    float: left;
+    margin-left: 20px;
+}
