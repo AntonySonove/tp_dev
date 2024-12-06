@@ -1,0 +1,126 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    background-color: var(--fg-color);
+    padding: 16px;
+    text-align: center;
+}
+
+.banner .title {
+    color: var(--main-color);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px 20%;
+    background-color: var(--bg-color);
+    border-bottom: solid var(--text-color) 5px;
+}
+
+.nav .title {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.nav .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav .navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.nav .navigation-list .navigation-item {
+    text-transform: capitalize;
+    font-weight: 100;
+    color: var(--text-color);
+}
+
+.nav .navigation-list .navigation-item:hover {
+    color: var(--main-color);
+    text-decoration: solid underline;
+}
+
+.nav .navigation-button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.nav .navigation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    width: 36px;
+    height: 36px;
+    transition: 0.2s ease-in-out;
+}
+
+.nav .navigation-button:hover {
+    transform: scale(1.2);
+}
+
+.navigation-button img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 780px) {
+    .nav .title {
+        font-size: 36px;
+    }
+
+    .nav {
+        padding: 20px 5%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .nav .navigation-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav .content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav .navigation-list {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nav .navigation-list .navigation-item {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: var(--main-color);
+        padding: 10px;
+        color: white;
+    }
+
+    .nav .navigation-button-container {
+        gap: 20px;
+    }
+
+    .nav .navigation-button {
+        transform: scale(1.2);
+    }
+
+    .nav .navigation-button:hover {
+        transform: scale(1.4);
+    }
+}

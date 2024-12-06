@@ -1,0 +1,16 @@
+@import url(footer.css);
+@import url(header.css);
+@import url(accueil.css);
+@import url(produit.css);
+
+:root {
+    --main-color: #7c925e;
+    --text-color: #6d6d6d;
+    --bg-color: #fbf9f7;
+    --fg-color: #ebe2d7;
+    --main-font: Arial, sans-serif;
+}
+
+body {
+    font-family: var(--main-font);
+}
