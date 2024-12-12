@@ -15,17 +15,20 @@ ul li{
 
 /*fond*/
 
+*{
+    margin: 0;
+    padding: 0%;
+}
 body{
     background-color: #96705b;
-    margin: 0;
-    padding: 0;
+    
 }
 
 /*header*/
 
 #header{
     background-color: rgba(0, 0, 0, 0.5);
-    
+    height: 150px;
 }
 #logo{
     position: top;
