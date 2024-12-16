@@ -136,7 +136,6 @@ let livre={
     "pages": 100
 };
 
-
 let cd={
     "genre": "metal",
     "artiste": "metalica",
@@ -148,3 +147,46 @@ console.log(tableau.artiste);
 delete livre.pages;
 console.log(livre);
 console.log(cd.hasOwnProperty("artiste"));
+
+// exo 8
+console.log(" ");
+console.log("exo 8");
+
+
+let dessin= [];
+let i= 0;
+while(i<10){
+    i++;
+    dessin.push("#");
+    console.log(dessin);
+}
+
+
+console.log(" ");
+
+
+let dessin2= [];
+for(let i=10; i>0; i-=2){
+    dessin2.push("#");
+    console.log(dessin2);
+}
+
+let notes=[];
+
+notes.push(1,2,3,5);
+
+function moyennes(t){
+
+    let somme=0;
+    let moyennes=0;
+
+    for(let i=0; i<t.length; i++){
+        somme+=t[i];
+        console.log(somme);
+    }
+
+    moyenne=somme/t.length;
+    return moyennes;
+}
+
+console.log(moyennes(notes));
