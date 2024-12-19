@@ -1,0 +1,20 @@
+body{
+    min-height: 5000px;
+}
+
+h1{
+    text-align: center;
+    margin: 60px;
+}
+.boxBar{
+    width: 100%;
+    border: 5px solid royalblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.bar{
+    height: 20px;
+    background: royalblue;
+    width: 0%;
+}

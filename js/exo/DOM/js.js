@@ -91,15 +91,64 @@ console.log(" ");//changer la couleur d'un élément
 
 console.log(" ");
 
-const titre1= document.getElementsById("t1");
-const titre2= document.getElementsById("t2");
-const titre3= document.getElementsById("t3");
+const titre1= document.getElementById("t1"); //NE PAS METTRE DE "S" A ELEMENT!!!
+const titre2= document.getElementById("t2"); //NE PAS METTRE DE "S" A ELEMENT!!!
+const titre3= document.getElementById("t3"); //NE PAS METTRE DE "S" A ELEMENT!!!
 
 // function scroll(){
 //     window.scrollTo(0, 5000);
 // }
 
-// titre1.addEventListener("click",function(){
-//     window.scrollTo(titre3);
+
+// console.log(titre3);
+
+titre3.addEventListener("click",function(){
+    // console.log("coucou");
+    window.scrollTo({top:titre3.offsetTop}); //renvoi l'ecran au debut du titre3
+});
+
+// const link= document.querySelector("a");
+
+// link.addEventListener("click", function(){
+//     console.log("bonjour");
+// })
+
+
+
+console.log(" "); // addEventListener
+
+// const link= document.querySelector("a");
+
+// function monClick(){
+//     console.log("bonjour");
+//     link.removeEventListener(monClick,monClick);
+// }
+// link.addEventListener("click",monClick);
+    
+// addEventListener("keypress",function(event){
+//     console.log(event);
 // });
 
+
+// function myFunction() {
+//     console.log("bonjour");
+//     let person = prompt();
+// }
+
+// link.addEventListener("click")
+
+console.log(" ");
+
+// const link= document.querySelector("a");
+
+// link.addEventListener("click",function(event){
+//     let person= prompt();
+
+//     if(person != null){
+//         document.getElementById("demo").innerText= person;
+//         console.log(person); //ca marche!
+//     }
+// });
+
+// // Ecrire dans le html : 
+// <p id="demo"></p>
