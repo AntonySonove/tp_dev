@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/> 
         <title>EPIC JDR</title>
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
        <!-- <header>
@@ -18,11 +18,36 @@
         </header>-->
         <header id="header">
 
-            <input type="image" alt="logo" src="logo epic jdr.png" class="logo">
+            <input type="image" alt="logo" src="images/logo epic jdr.png" class="logo">
 
-            <button type="button" id="logo_bouton">
-                <img src="logo epic jdr.png" alt="logo" class="logo"/>
-            </button>
+            <div class="navBar">
+
+                <a href="#"><div class="boutonPrincipal">
+                    <a id="dropdownMenuCreer" class="boutonSecondaire" href="#">créer</a>
+                    <div>
+                        <ul id="showMenuCreer" class="menuCache">
+                            <li class="boutonPrincipal"><a class="boutonSecondaire" href="#">créer une fiche personnage</a></li>
+                            <li class="boutonPrincipal"><a class="boutonSecondaire" href="#">créer une partie</a></li>
+                        </ul>
+                    </div>
+                </div></a>
+                
+                <div class="boutonPrincipal">
+                    <a id="dropdownMenuGerer" class="boutonSecondaire" href="#">gérer</a>
+                    <div>
+                        <ul id="showMenuGerer" class="menuCache">
+                            <li class="boutonPrincipal"><a class="boutonSecondaire" href="#">créer une fiche personnage</a></li>
+                            <li class="boutonPrincipal"><a class="boutonSecondaire" href="#">créer une partie</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    
+                <a class="boutonPrincipal" href="#">lancer une partie</a>
+                <a class="boutonPrincipal" href="#">mon compte</a>
+                <a class="boutonPrincipal" href="#">déconnexion</a>
+                
+            </div>
+          
 
         </header>
 
@@ -76,6 +101,6 @@
         </div>
 
 
-        
+        <script src="script.js"></script>
     </body>
 </html>

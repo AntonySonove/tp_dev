@@ -39,11 +39,12 @@ header{
 
 
 /* nav */
-.bgWhite{
+.navBar{
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 .boutonPrincipal{
     text-decoration: none;
@@ -53,6 +54,7 @@ header{
     color: white;
     width: 150px;
     height: 50px;
+    cursor: pointer;
     text-align: center;
     align-content: center; 
 }
@@ -60,14 +62,17 @@ header{
     text-decoration: none;
     color: white;
 }
+
 ul{
-    /* display: none; */
     list-style: none;
     flex-direction: column;
     position: absolute;
     padding-top: 18px;
     margin-left: -3px;
     
+}
+.menuCache{
+    display: none;
 }
 
 
