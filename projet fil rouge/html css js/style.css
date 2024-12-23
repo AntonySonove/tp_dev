@@ -5,8 +5,28 @@
 html{
     font-family: "instrument", sans-serif;
 }
+a{
+    text-decoration: none;
+}
 
-/*fond*/
+/* style */
+.divJaune{
+    background-color: #7a7461;
+    border: solid 3px #592E83;
+    border-radius: 3px;
+    color: white;
+    padding: 2%;
+}
+.bouton{
+    background-color: #f4e8c1;
+    border: solid 3px #592E83;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
+}
+
+    /* fond */
 body{
     background-color: #96705b;
 }
@@ -20,24 +40,20 @@ body{
 /*header*/
 header{
     display: flex;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     height: 150px;
     width: 100%;  
 }
 
-
-/* logo */
+    /* logo */
 .logo{
     position: top;
     height: 100%;
     cursor: pointer;
 }
-.font{
-font-family: instrument sans-serif;
-}
 
 
-/* nav */
+    /* nav */
 .navBar{
     width: 100%;
     display: flex;
@@ -88,7 +104,28 @@ ul{
     display: none;
 }
 
-
+/* accueil */
+main{
+    padding: 2% 15%;
+}
+#bienvenue{ 
+    margin-right: 45%;
+    margin-bottom: 2%;
+}
+#divConnexionInscription{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#divConnexionInscription h2{
+    text-align: center;
+}
+.formConnexionInscription{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
 /* footer */
 footer{
     display: flex;
@@ -101,7 +138,6 @@ footer{
     align-items: center;
 }
 footer a{
-    text-decoration: none;
     color: white;
 }
 footer a:hover{
