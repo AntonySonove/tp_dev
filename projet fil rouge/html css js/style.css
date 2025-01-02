@@ -8,14 +8,17 @@ html{
 a{
     text-decoration: none;
 }
-
+input{
+    width: 200px;
+    margin-bottom: 20px;
+}
 /* style */
 .divJaune{
     background-color: #7a7461;
     border: solid 3px #592E83;
     border-radius: 3px;
     color: white;
-    padding: 2%;
+    padding: 50px;
 }
 .bouton{
     background-color: #f4e8c1;
@@ -109,8 +112,7 @@ main{
     padding: 2% 15%;
 }
 #bienvenue{ 
-    margin-right: 45%;
-    margin-bottom: 2%;
+    margin-bottom: 50px;
 }
 #divConnexionInscription{
     display: flex;
@@ -118,6 +120,7 @@ main{
     justify-content: space-between;
 }
 #divConnexionInscription h2{
+    margin-bottom: 20px;
     text-align: center;
 }
 .formConnexionInscription{
@@ -125,6 +128,9 @@ main{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+}
+.commencerLAventure{
+    height: 50px;
 }
 /* footer */
 footer{
