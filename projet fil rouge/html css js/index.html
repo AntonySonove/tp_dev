@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8"/> 
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Bienvenue sur EPIC JDR">
         <title>EPIC JDR - accueil</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,78 +13,94 @@
     <body>
        <div id="container">
             <header>
-                <a href="index.html"><img src="ressources/logo epic jdr.png" width="150" alt="logo" class="logo" onclick=location.href="index.html"></a>
-
-                <div class="navBar">
-
-                    <div id="dropdownMenuCreer" class="boutonPrincipal borderBouton" onclick=location.href="#">créer
-                        <div>
-                            <ul id="showMenuCreer" class="menuCache">
-                                <a href="creer_fiche_perso.html"><li class="boutonSecondaire borderBouton">créer une fiche personnage</li></a>
-                                <a href="creer_partie.html"><li class="boutonSecondaire borderBouton">créer une partie</li></a>
-                            </ul>
+                <div id="header">
+                    <a href="index.html"><img src="ressources/logo epic jdr.png" width="150" alt="logo" class="logo" onclick=location.href="index.html"></a>
+                    <div class="navBar">
+                        <div id="dropdownMenuCreer" class="boutonPrincipal borderBouton" onclick=location.href="#">créer
+                            <div>
+                                <ul id="showMenuCreer" class="menuCache">
+                                    <a href="creer_fiche_perso.html"><li class="boutonSecondaire borderBouton">créer une fiche personnage</li></a>
+                                    <a href="creer_partie.html"><li class="boutonSecondaire borderBouton">créer une partie</li></a>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div id="dropdownMenuGerer" class="boutonPrincipal borderBouton" onclick=location.href="#">gérer
-                        <div>
-                            <ul id="showMenuGerer" class="menuCache">
-                                <a href="gerer_fiches_perso.html"><li class="boutonPrincipal borderBouton">gérer les fiches personnages</li></a>
-                                <a href="gerer_parties.html"><li class="boutonPrincipal borderBouton">gérer les partie</li></a>
-                            </ul>
-                        </div>
-                    </div>
                         
-                    <a class="boutonPrincipal borderBouton" href="lancer_partie.html">lancer une partie</a>
-                    <a class="boutonPrincipal borderBouton" href="mon_compte.html">mon compte</a>
-                    <a class="boutonPrincipal borderBouton" href="index.html">déconnexion</a>
-                    
+                        <div id="dropdownMenuGerer" class="boutonPrincipal borderBouton" onclick=location.href="#">gérer
+                            <div>
+                                <ul id="showMenuGerer" class="menuCache">
+                                    <a href="gerer_fiches_perso.html"><li class="boutonSecondaire borderBouton">gérer les fiches personnages</li></a>
+                                    <a href="gerer_parties.html"><li class="boutonSecondaire borderBouton">gérer les partie</li></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="boutonPrincipal borderBouton" href="lancer_partie.html">lancer une partie</a>
+                        <a class="boutonPrincipal borderBouton" href="mon_compte.html">mon compte</a>
+                        <a class="boutonPrincipal borderBouton" href="index.html">déconnexion</a>
+                    </div>
                 </div>
             </header>
             <main>
-                <div id="bienvenue" class="divJaune">
-                    <h1>Bienvenue sur EPIC JDR</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eos omnis quaerat odit quam doloribus hic rem? Neque, nam tenetur doloremque nulla nostrum adipisci itaque. Commodi, esse temporibus tempora doloribus ipsam odit, molestiae unde nam officiis ut debitis doloremque iure porro fugiat quod corporis cupiditate itaque. Voluptate porro deserunt fuga explicabo iste consequatur minus soluta necessitatibus ab magni, nulla beatae. Maiores illum unde excepturi blanditiis ut iusto, dolore iste libero at ea ratione pariatur dolorem ducimus velit est atque non magni nihil laboriosam, aliquid autem? Tenetur reprehenderit dolorem at, odit libero dignissimos eaque aperiam quibusdam a sunt tempora! Natus, repellendus.</p>
+                <div id="main">
+                    <div id="bienvenue" class="divJaune">
+                        <h1>Bienvenue sur EPIC JDR</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eos omnis quaerat odit quam doloribus hic rem? Neque, nam tenetur doloremque nulla nostrum adipisci itaque. Commodi, esse temporibus tempora doloribus ipsam odit, molestiae unde nam officiis ut debitis doloremque iure porro fugiat quod corporis cupiditate itaque. Voluptate porro deserunt fuga explicabo iste consequatur minus soluta necessitatibus ab magni, nulla beatae. Maiores illum unde excepturi blanditiis ut iusto, dolore iste libero at ea ratione pariatur dolorem ducimus velit est atque non magni nihil laboriosam, aliquid autem? Tenetur reprehenderit dolorem at, odit libero dignissimos eaque aperiam quibusdam a sunt tempora! Natus, repellendus.</p>
+                    </div>
+                    <div id="connexionInscription">
+                        <div id="connexion" class="divJaune">
+                            <h2>Connexion</h2>
+                            <form>
+                                <div class="inputBouton">
+                                    <div>
+                                        <div id="spaceInput">
+                                            <div>
+                                                <label for="email">e-mail</label><br>
+                                                <input type="email" name="email" placeholder="Ex : email@monemail.com">
+                                            </div>
+                                            <div>
+                                                <label for="mot de passe">mot de passe</label><br>
+                                                <input type="password" name="mot de passe" placeholder="Ex : jsYzjf!5f?E9">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="submit" class="bouton commencerLAventure" value="Continuer l'aventure!"></input>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="inscription" class="divJaune">
+                            <form>
+                                <h2>Inscription</h2>
+                                <div class="inputBouton">
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <label for="pseudo">pseudo</label><br>
+                                                <input type="text" name="pseudo" placeholder="pseudo">
+                                            </div>
+                                            <div>
+                                                <label for="email">e-mail</label><br>
+                                                <input type="email" name="email" placeholder="Ex : email@monemail.com">
+                                            </div>
+                                            <div>
+                                                <label for="mot de passe">mot de passe</label><br>
+                                                <input type="password" name="mot de passe" placeholder="Ex : jsYzjf!5f?E9">
+                                            </div>
+                                            <div>
+                                                <label for="confirmer mot de passe">confimer le mot de passe</label><br>
+                                                <input type="password" name="confimer mot de passe" placeholder="Ex : jsYzjf!5f?E9">
+                                            </div>
+                                        </div>
+                                  
+                                    </div>
+                                    <div>
+                                        <input type="submit" class="bouton commencerLAventure" value="Commencer l'aventure!"></input>
+                                    </div> 
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div id="divConnexionInscription">
-                    <form class="divJaune formConnexionInscription">
-                        <h2>Connexion</h2>
-                        <div>
-                            <label for="email">e-mail</label><br>
-                            <input type="email" name="email" placeholder="Ex : email@monemail.com">
-                        </div>
-                        <div>
-                            <label for="mot de passe">mot de passe</label><br>
-                            <input type="password" name="mot de passe" placeholder="Ex : jsYzjf!5f?E9">
-                        </div>
-                        <div>
-                            <input type="submit" class="bouton commencerLAventure" value="Continuer l'aventure!"></input>
-                        </div>
-                    </form>
-                    <form class="divJaune formConnexionInscription">
-                        <h2>Inscription</h2>
-                        <div>
-                            <label for="pseudo">pseudo</label><br>
-                            <input type="text" name="pseudo" placeholder="pseudo">
-                        </div>
-                        <div>
-                            <label for="email">e-mail</label><br>
-                            <input type="email" name="email" placeholder="Ex : email@monemail.com">
-                        </div>
-                        <div>
-                            <label for="mot de passe">mot de passe</label><br>
-                            <input type="password" name="mot de passe" placeholder="Ex : jsYzjf!5f?E9">
-                        </div>
-                        <div>
-                            <label for="confirmer mot de passe">confimer le mot de passe</label><br>
-                            <input type="password" name="confimer mot de passe" placeholder="Ex : jsYzjf!5f?E9">
-                        </div>
-                        <div>
-                            <input type="submit" class="bouton commencerLAventure" value="Commencer l'aventure!"></input>
-                        </div>
-                    </form>
-                </div>
-              
             </main>     
        </div>
        <footer>
