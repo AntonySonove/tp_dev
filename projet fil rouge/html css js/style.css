@@ -228,7 +228,7 @@ footer a:hover{
     text-decoration-line: underline;
 }
 /* media query */
-/* @media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1200px){
 
     #connexionInscription{
         flex-direction: column;
@@ -264,4 +264,4 @@ footer a:hover{
         justify-content: center;
         gap: 15px;
     }
-} */
+}
