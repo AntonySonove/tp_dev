@@ -10,6 +10,7 @@ const contactApi= async()=>{
     console.log(response);
     console.log(response.ok);
     console.log(response.status);
+
     //! transformation en objet js
     const dataTransformed=await response.json();
     console.log(dataTransformed);
@@ -39,9 +40,11 @@ const contactApi= async()=>{
     poussachaImg.setAttribute("width","150")
     const poussachaType1=document.body.appendChild(document.createElement("h4"));
     poussachaType1.innerText+=dataTransformed[i].types[0].name;
-    //! utiliser un if et la fonction qui permet de demander si le tableau contient un "type 2" pour le lister si il existe
+
+    //? utiliser un if et la fonction qui permet de demander si le tableau contient un "type 2" pour le lister si il existe?
     // const poussachaType2=document.body.appendChild(document.createElement("h4"));
     // poussachaType2.innerText+=dataTransformed[i].types[1].name;
+    
     const poussachaWeight=document.body.appendChild(document.createElement("h4"));
     poussachaWeight.innerText+=dataTransformed[i].weight;
     const poussachaHeight=document.body.appendChild(document.createElement("h4"));
