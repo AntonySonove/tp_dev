@@ -1,83 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8"/> 
-        <title>EPIC JDR - gérer les fiches perso</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="container">
-            <header>
-                <div id="header">
-                    <a href="index.html"><img src="ressources/logo epic jdr.png" width="150" alt="logo" class="logo" onclick=location.href="index.html"></a>
-                    <div class="navBar">
-                        <div id="dropdownMenuCreer" class="boutonPrincipal borderBouton" onclick=location.href="#">créer
-                            <div>
-                                <ul id="showMenuCreer" class="menuCache">
-                                    <a href="creer_fiche_perso.html"><li class="boutonSecondaire borderBouton">créer une fiche personnage</li></a>
-                                    <a href="creer_partie.html"><li class="boutonSecondaire borderBouton">créer une partie</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="dropdownMenuGerer" class="boutonPrincipal borderBouton" onclick=location.href="#">gérer
-                            <div>
-                                <ul id="showMenuGerer" class="menuCache">
-                                    <a href="gerer_fiches_perso.html"><li class="boutonSecondaire borderBouton">gérer les fiches personnages</li></a>
-                                    <a href="gerer_parties.html"><li class="boutonSecondaire borderBouton">gérer les partie</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                        <a class="boutonPrincipal borderBouton" href="lancer_partie.html">lancer une partie</a>
-                        <a class="boutonPrincipal borderBouton" href="mon_compte.html">mon compte</a>
-                        <a class="boutonPrincipal borderBouton" href="index.html">déconnexion</a>
-                    </div>
-                </div>
-            </header>
-            <main>
-                <div id="containerGerer">
-                    <h4>Gérer les fiches personnages</h4>
-                    <article class="divJaune">
-                        <h5>Nom du personnage</h5>
-                        <div class="menuCreerModifier">
-                            <div class="alignerBoutonCreerModifier">
-                                <a class="bouton boutonCreerModifier" href="#">Modifier</a>
-                                <input class="bouton boutonDownload" type="image" src="ressources/download.png" alt="download">
-                            </div>
-                            <img src="ressources/logo_blanc.png" alt="img" width="50" height="50">
-                        </div>
-                    </article>
-                    <article class="divJaune">
-                        <h5>Nom du personnage</h5>
-                        <div class="menuCreerModifier">
-                            <div class="alignerBoutonCreerModifier">
-                                <a class="bouton boutonCreerModifier" href="#">Modifier</a>
-                                <input class="bouton boutonDownload" type="image" src="ressources/download.png" alt="download">
-                            </div>
-                            <img src="ressources/logo_blanc.png" alt="img" width="50" height="50">
-                        </div>
-                    </article>
-                    <article class="divJaune">
-                        <h5>Nom du personnage</h5>
-                        <div class="menuCreerModifier">
-                            <div class="alignerBoutonCreerModifier">
-                                <a class="bouton boutonCreerModifier" href="#">Modifier</a>
-                                <input class="bouton boutonDownload" type="image" src="ressources/download.png" alt="download">
-                            </div>
-                            <img src="ressources/logo_blanc.png" alt="img" width="50" height="50">
-                        </div>
-                    </article>
-                </div>
-            </main>     
-       </div>
-       <footer>
-            <a href="mention_legales.html">mentions légales</a>
-            <a href="politique_de_confidentialite.html">politique de confidentialité</a>
-            <a href="parametre_des_cookies.html">paramètre des cookies</a>
-            <a href="contact.html">contact</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC JDR - accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <a href="./accueil.html"><img id="logo" src="ressources/logo epic jdr.png" height="150" alt="logo"></a>
+                <ul id="dropdownMenuCreer">
+                    <li>créer</li>
+                        <ul id="showMenuCreer" class="menuCache menuCacheAbsolute">
+                            <li><a href="./accueil.html">créer une fiche personnage</a></li>
+                            <li><a href="./creer_partie.html">créer une partie</a></li>
+                        </ul>
+                </ul>
+                <ul id="dropdownMenuGerer">
+                    <li>gérer</li>
+                        <ul id="showMenuGerer" class="menuCache menuCacheAbsolute">
+                            <li><a href="./gerer_fiches_perso.html">gerer les fiches personnages</a></li>
+                            <li><a href="./gerer_parties.html">gerer les parties</a></li>
+                        </ul>
+                </ul>
+                <a href="./lancer_partie.html">lancer une partie</a>
+                <a href="./mon_compte.html">mon compte</a>
+                <a href="./accueil.html">déconnexion</a>
+            </nav>
+        </header>
+      
+        <footer>
+            <a href="./mention_legales.html">mentions légales</a>
+            <a href="./politique_de_confidentialite.html">politique de confidentialité</a>
+            <a href="./parametre_des_cookies.html">paramètre des cookies</a>
+            <a href="./contact.html">contact</a>
         </footer>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

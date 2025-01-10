@@ -1,0 +1,41 @@
+#containerGerer{
+    margin: 50px 10% 50px 10%;
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+h4{
+    color: white;
+    margin-bottom: 50px;
+    grid-column: 1/span 2;
+}
+.article:nth-child(odd){
+    grid-column: 1;
+    margin: 25px;
+}
+article{
+    margin: 25px 100px;
+}
+h5{
+    margin-bottom: 25px;
+}
+.menuCreerModifier{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+.alignerBoutonCreerModifier{
+    display: flex;
+    gap: 25px;
+}
+.boutonCreerModifier{
+    width: 144px;
+    height: 44px;
+    cursor: pointer;
+    color: black;
+}
+.boutonDownload{
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+}

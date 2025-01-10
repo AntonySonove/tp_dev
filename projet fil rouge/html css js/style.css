@@ -1,19 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-html{
-    font-family: "instrument", sans-serif;
-}
-a{
-    text-decoration: none;
-}
-input{
-    width: 200px;
-    height: 25px;
-    border: solid 1px black;
-}
-/* style */
+@import url(header_footer.css);
+@import url(accueil.css);
+/* composants */
 .divJaune{
     background-color: #7a7461;
     border: solid 3px #592E83;
@@ -21,247 +8,26 @@ input{
     color: white;
     padding: 25px;
 }
-.bouton{
+.boutonJaune{
     background-color: #f4e8c1;
     border: solid 3px #592E83;
     border-radius: 3px;
     font-weight: bold;
-    text-align: center;
-    align-content: center;
 }
-.bouton:hover{
-    transform: scale(120%);
-    transition: 0.5s;
-}
-h2{
-    margin-bottom: 20px;
-    text-align: center;
+input{
+    width: 200px;
+    height: 25px;
+    border: solid 1px black;
 }
 
-    /* fond */
-body{
-    background-color: #96705b;
-}
-#container{
+/* flex */
+.column{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
-
-/* accueil */
-#main{
-    margin: 50px 30% 50px 10%;
-}
-#bienvenue{ 
-   display: flex;
-   flex-direction: column;
-   margin-bottom: 50px;
-}
-#connexionInscription{
+.row{
     display: flex;
-    gap: 50px;
+}
+.spaceBetween{
     justify-content: space-between;
-}
-#connexion{
-    display: flex;
-    flex-direction: column;
-}
-#inscription{
-    display: flex;
-    flex-direction: column;
-}
-.inputBouton{
-    height: 175px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 50px;
-}
-#spaceInput{
-    height: 175px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 40px;
-}
-.commencerLAventure{
-    height: 100px;
-    font-size: 17px;
-    cursor: pointer;
-    justify-self: flex-end;
-}
-
-/* gérer fiches personnage */
-#containerGerer{
-    margin: 50px 10% 50px 10%;
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-h4{
-    color: white;
-    margin-bottom: 50px;
-    grid-column: 1/span 2;
-}
-.article:nth-child(odd){
-    grid-column: 1;
-    margin: 25px;
-}
-article{
-    margin: 25px 100px;
-}
-h5{
-    margin-bottom: 25px;
-}
-.menuCreerModifier{
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-}
-.alignerBoutonCreerModifier{
-    display: flex;
-    gap: 25px;
-}
-.boutonCreerModifier{
-    width: 144px;
-    height: 44px;
-    cursor: pointer;
-    color: black;
-}
-.boutonDownload{
-    width: 36px;
-    height: 36px;
-    padding: 4px;
-}
-/*header*/
-#header{
-    display: flex;
-    background-color: rgba(0,0,0,0.5);
-    height: 150px;
-    width: auto;  
-}
-
-    /* logo */
-.logo{
-    position: top;
-    height: 150px;
-    cursor: pointer;
-}
-.logo:hover{
-    transform: scale(110%);
-    transition: 0.2s;
-}
-
-    /* nav */
-.navBar{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.boutonPrincipal{
-    text-decoration: none;
-    border: solid 3px #592E83;
-    border-radius: 3px;
-    background-color: black;
-    font-family: sans-serif;
-    color: white;
-    width: 144px;
-    height: 44px;
-    cursor: pointer;
-    text-align: center;
-    align-content: center; 
-}
-.boutonSecondaire{
-    text-decoration: none;
-    border: solid 3px #592E83;
-    border-radius: 3px;
-    background-color: black;
-    font-family: sans-serif;
-    color: white;
-    width: 144px;
-    height: 44px;
-    cursor: pointer;
-    text-align: center;
-    align-content: center; 
-}
-.boutonPrincipal:hover{
-    background-color: #f4e8c1;
-    color: black;
-}
-.boutonSecondaire:hover{
-    background-color: #f4e8c1;
-    color: black;
-}
-ul{
-    list-style: none;
-    flex-direction: column;
-    position: absolute;
-    padding-top: 18px;
-    margin-left: -3px;   
-}
-.menuCache{
-    transform: scaleY(0%) translateY(-50px);
-    transition: 0.2s;
-}
-.menuAffiche{
-    transform: scale(100%);
-    transition: 0.2s;
-}
-
-/* footer */
-footer{
-    display: flex;
-    background-color: rgba(0,0,0,0.5);
-    /* position: relative; */
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-}
-footer a{
-    color: white;
-}
-footer a:hover{
-    text-decoration-line: underline;
-}
-/* media query */
-@media only screen and (max-width: 1200px){
-
-    #connexionInscription{
-        flex-direction: column;
-        max-width: 508px;
-    }
-    #main{
-        display: flex;
-        flex-direction: column;      
-        max-width: 508px;
-        margin: 50px auto;
-        
-    }
-}
-@media only screen and (max-width: 980px){
-
-    #header{
-        flex-direction: column;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0)
-    }
-    .navBar{
-        flex-direction: column;
-        width: 300px;
-        align-items: flex-start;
-    }
-
-    ul{
-        margin-left: 150px;
-        margin-top: -50px;
-
-    }
-    footer{
-        justify-content: center;
-        gap: 15px;
-    }
 }

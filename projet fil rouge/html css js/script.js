@@ -11,10 +11,10 @@ dropdownMenuCreer.onmouseenter=(function(){mouseEnterCreer()});
 dropdownMenuCreer.onmouseleave=(function(){mouseLeaveCreer()});
 
 function mouseEnterCreer(){
-    showMenuCreer.classList.add("menuAffiche");
+    showMenuCreer.classList.remove("menuCache");
 }
 function mouseLeaveCreer(){
-    showMenuCreer.classList.remove("menuAffiche")
+    showMenuCreer.classList.add("menuCache")
     // showMenuCreer.classList.add("menuCache");
 }
         //gérer
@@ -26,9 +26,9 @@ dropdownMenuGerer.onmouseenter=(function(){mouseEnterGerer()});
 dropdownMenuGerer.onmouseleave=(function(){mouseLeaveGerer()});
 
 function mouseEnterGerer(){
-    showMenuGerer.classList.add("menuAffiche");
+    showMenuGerer.classList.remove("menuCache");
 }
 function mouseLeaveGerer(){
-    showMenuGerer.classList.remove("menuAffiche")
+    showMenuGerer.classList.add("menuCache")
     // showMenuGerer.classList.add("menuCache");
 }
