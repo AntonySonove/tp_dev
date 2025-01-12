@@ -33,6 +33,10 @@ nav{
     height: 150px;
     width: 150px;
 }
+#logo:hover{
+    transform: scale(120%);
+    transition: 0.5s;
+}
 a{
     text-decoration: none;
     color: white;

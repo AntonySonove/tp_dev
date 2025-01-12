@@ -1,5 +1,4 @@
 @import url(header_footer.css);
-@import url(accueil.css);
 /* composants */
 .divJaune{
     background-color: #7a7461;
@@ -13,6 +12,10 @@
     border: solid 3px #592E83;
     border-radius: 3px;
     font-weight: bold;
+}
+.boutonJaune:hover{
+    transform: scale(120%);
+    transition: 0.5s;
 }
 input{
     width: 200px;

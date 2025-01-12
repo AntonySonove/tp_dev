@@ -1,41 +1,45 @@
-#containerGerer{
-    margin: 50px 10% 50px 10%;
+@import url(style.css);
+@import url(header_footer.css);
+main{
     display: flex;
+    flex-direction: column;
+    margin: 50px 300px;
+    gap: 50px;
+}
+.gridGerer{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 h4{
     color: white;
-    margin-bottom: 50px;
-    grid-column: 1/span 2;
+    /* margin-bottom: 50px; */
+}
+article{
+    margin: 25px 50px;
 }
 .article:nth-child(odd){
     grid-column: 1;
     margin: 25px;
 }
-article{
-    margin: 25px 100px;
-}
 h5{
     margin-bottom: 25px;
-}
-.menuCreerModifier{
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-}
-.alignerBoutonCreerModifier{
-    display: flex;
-    gap: 25px;
 }
 .boutonCreerModifier{
     width: 144px;
     height: 44px;
     cursor: pointer;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .boutonDownload{
-    width: 36px;
-    height: 36px;
-    padding: 4px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divBoutonCreerModifier{
+    display: flex;
 }

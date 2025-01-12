@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPIC JDR - accueil</title>
+    <title>EPIC JDR - lancer uen partie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lancer_partie.css">
 </head>
 <body>
     <div id="container">
@@ -17,7 +17,7 @@
                 <ul id="dropdownMenuCreer">
                     <li>créer</li>
                         <ul id="showMenuCreer" class="menuCache menuCacheAbsolute">
-                            <li><a href="./accueil.html">créer une fiche personnage</a></li>
+                            <li><a href="./creer_fiche_perso.html">créer une fiche personnage</a></li>
                             <li><a href="./creer_partie.html">créer une partie</a></li>
                         </ul>
                 </ul>
@@ -33,7 +33,12 @@
                 <a href="./accueil.html">déconnexion</a>
             </nav>
         </header>
-      
+        <main>
+            
+                <button onclick="choixAttaqueJ1(attaqueM)">choix attaque J1</button>
+                <button onclick="choixAttaqueJ2(attaqueM)">choix attaque J2</button>
+                <button onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
+        </main>
         <footer>
             <a href="./mention_legales.html">mentions légales</a>
             <a href="./politique_de_confidentialite.html">politique de confidentialité</a>
