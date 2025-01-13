@@ -39,23 +39,23 @@ function mouseLeaveGerer(){
 let joueur=[
     stat={
         nom:"Antony",
-        pv:15,
-        pm:10,
+        pv:30,
+        pm:5,
         atk:10,
-        atkm:15,
-        def:10,
-        defm:10,
+        atkm:10,
+        def:5,
+        defm:5,
         vit:2,
     },
 ];
 compJoueur=[
     attaquePhysique={
         cout:0,
-        degats:joueur[0].atk,
+        degats:0,
     },
     attaqueMagique={
         cout:2,
-        degats:joueur[0].atkm,
+        degats:10,
     }
 ];
 joueur.push(compJoueur);
@@ -65,10 +65,10 @@ console.log(joueur);
 let pnj=[
     stat={
         nom:"Jury",
-        pv:15,
+        pv:30,
         pm:5,
-        atk:5,
-        atkm:5,
+        atk:10,
+        atkm:10,
         def:5,
         defm:5,
         vit:3,
@@ -77,11 +77,11 @@ let pnj=[
 compPnj=[
     attaquePhysique={
         cout:0,
-        degats:pnj[0].atk,
+        degats:0,
     },
     attaqueMagique={
         cout:2,
-        degats:pnj[0].atkm,
+        degats:10,
     }
 ];
 pnj.push(compPnj);
@@ -122,9 +122,11 @@ console.log(pnj);
 function attaqueP(j1,j2){
     if (j1[0].pm>=j1[1][0].cout){ //? vérif cout en mp
         j1[0].pm-=j1[1][0].cout; //? déduction du coût en mp
-        if (j1[1][0].degats>j2[0].defm){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
-            j2[0].pv-=j1[1][0].degats-pnj[0].defm; //? déduction des dégâts sur les pv
+        if (j1[1][0].degats+j1[0].atk>j2[0].def){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
+            j2[0].pv-=j1[1][0].degats+j1[0].atk-pnj[0].def; //? déduction des dégâts sur les pv
         }
+    } else { console.log(j1[0].nom,"n'a pas assez de pm.");
+
     }
 }
 // attaqueP(joueur,pnj);
@@ -140,8 +142,10 @@ function attaqueM(j1,j2){
     if (j1[0].pm>=j1[1][1].cout){ //? vérif cout en mp
         j1[0].pm-=j1[1][1].cout; //? déduction du coût en mp
         if (j1[1][1].degats>j2[0].defm){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
-        j2[0].pv-=j1[1][1].degats-pnj[0].defm; //? déduction des dégâts sur les pv
+            j2[0].pv-=j1[1][1].degats-pnj[0].defm; //? déduction des dégâts sur les pv
         }
+    } else { console.log(j1[0].nom,"n'a pas assez de pm.");
+
     }
 }
 // attaqueM(joueur,pnj);
@@ -152,24 +156,59 @@ function attaqueM(j1,j2){
 // console.log(joueur);
 // console.log(pnj);
 
-//* fonction qui contrôle les priorités grâce à la stat de vit et qui permet de un choix d'attaque
+//* fonction qui contrôle les pv et les priorités grâce à la stat de vit et qui permet de un choix d'attaque
 let choixJ1;
 let choixJ2
 function priorite(j1,choixJ1,j2,choixJ2){
-    if (j1[0].vit>j2[0].vit){ //? vérif des vit
-        choixJ1(j1,j2);
-        if(j2[0].pv>0){
-            choixJ2(j2,j1);
+    if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
+        if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
+            choixJ1(j1,j2); //? attaque de j1
+            if(j2[0].pv<=0){ //? vérif si j2 est mort
+            console.log(j2[0].nom,"est mort.");
+            } 
+            else {
+                choixJ2(j2,j1); //? attaque de j2
+                if(j1[0].pv<=0){ //? vérif si j1 est mort
+                    console.log(j1[0].nom,"est mort.");
+                }
+            }    
+        } 
+        else { //? dans le cas ou j2 est plus rapide que j1
+            choixJ2(j2,j1); //? attaque de j2
+            if(j1[0].pv<=0){ //? vérif si j1 est mort
+                // console.log(j1[0].nom,"est mort.");
+            } 
+            else {
+                choixJ1(j1,j2); //? attaque de j1
+                if(j2[0].pv<=0){ //? vérif si j2 est mort
+                // console.log(j2[0].nom,"est mort.");
+                }
+            }
+        }    
+        if(j1[0].pv<=0){
+            console.log(j1[0].nom,"est mort.");
         }
-    } else {
-        choixJ2(j2,j1);
-        if(j1[0].pv>0){
-            choixJ1(j1,j2);
+        else{
+            console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm");
+        }
+        if(j2[0].pv<=0){
+            console.log(j2[0].nom,"est mort.");
+        }
+        else{
+            console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
+        }
+        boutonBattle.disabled=true;
+        boutonJ2.disabled=true;
+    } 
+    else {
+        if (j1[0].pv<=0){
+        console.log(j1[0].nom,"n'a plus de pv.");
+        } 
+        else{ 
+            console.log(j2[0].nom,"n'a plus de pv.");
         }
     }
-    console.log(joueur);
-    console.log(pnj);
-}
+}  
 // priorite(joueur,attaqueM,pnj,attaqueM);
 // console.log(joueur);
 // console.log(pnj);
@@ -178,17 +217,45 @@ function priorite(j1,choixJ1,j2,choixJ2){
 // console.log(joueur);
 // console.log(pnj);
 
-
+//* fonctions pour le choix de l'attaque
 function choixAttaqueJ1(f){
     choixJ1=f;
-    console.log(choixJ1);
+    // console.log(choixJ1);
 }
-
 function choixAttaqueJ2(f){
     choixJ2=f;
+    // console.log(choixJ2);
 }
+
+
 // choixAttaqueJ1(attaqueM);
 // console.log(choixJ1);
 
 // choixAttaqueJ2(attaqueP);
 // console.log(choixJ2);
+
+function coupEpee(j1,j2){
+    j1[1][0].degats+=5;
+    console.log(j1[0].nom,"utilise Coup d'épée!")
+    // console.log(j1[1][0].degats);
+    attaqueP(j1,j2);
+    j1[1][0].degats=0;
+    // console.log(j1[1][0].degats);
+}
+
+//! config boutons battle
+const boutonBattle=document.getElementById("boutonBattle");
+// console.log(boutonBattle);
+const boutonJ1=document.getElementById("boutonJ1")
+// console.log(boutonJ1);
+const boutonJ2=document.getElementById("boutonJ2");
+// console.log(boutonJ2);
+boutonJ2.disabled=true
+boutonBattle.disabled=true
+
+function enableBoutonJ2(){
+    boutonJ2.disabled=false;
+}
+function enableBoutonBattle(){
+    boutonBattle.disabled=false;
+}

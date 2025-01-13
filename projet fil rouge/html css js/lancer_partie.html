@@ -34,10 +34,9 @@
             </nav>
         </header>
         <main>
-            
-                <button onclick="choixAttaqueJ1(attaqueM)">choix attaque J1</button>
-                <button onclick="choixAttaqueJ2(attaqueM)">choix attaque J2</button>
-                <button onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
+                <button id="boutonJ1" onclick="choixAttaqueJ1(coupEpee); enableBoutonJ2()">choix attaque J1</button>
+                <button id="boutonJ2" onclick="choixAttaqueJ2(attaqueP); enableBoutonBattle()">choix attaque J2</button>
+                <button id="boutonBattle" onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
         </main>
         <footer>
             <a href="./mention_legales.html">mentions légales</a>
