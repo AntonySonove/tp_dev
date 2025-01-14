@@ -24,3 +24,36 @@ const dbRef = firebase.database().ref();
  * @type {Object}
  */
 const allTasksRef = dbRef.child("tasks");
+
+
+/**
+ * Référence au bouton d'ajout de tâche dans l'interface utilisateur.
+ * @type {HTMLElement}
+ */
+const addBtnUI = document.querySelector('#addTaskButton');
+
+/**
+ * Référence à la liste des tâches dans l'interface utilisateur.
+ * @type {HTMLElement}
+ */
+const tasksListUI = document.querySelector('#taskList');
+
+/**
+ * Ajoute un écouteur d'événements au bouton d'ajout de tâche.
+ * @event click
+ * @param {Function} addTask - Fonction appelée lors du clic sur le bouton.
+ */
+addBtnUI.addEventListener('click', addTask);
+
+
+/**
+ * Ajoute une nouvelle tâche à la base de données.
+ * @function addTask
+ * @description Cette fonction récupère la valeur de l'input de tâche, 
+ * crée un nouvel objet tâche avec cette valeur, 
+ * l'ajoute à la base de données Firebase, 
+ * vide l'input et met à jour l'affichage des tâches.
+ */
+
+
+allTasksRef.push(newTask);
