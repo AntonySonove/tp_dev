@@ -13,7 +13,7 @@
     <div id="container">
         <header>
             <nav>
-                <a href="./accueil.html"><img id="logo" src="ressources/logo epic jdr.png" height="150" alt="logo"></a>
+                <a href="./index.html"><img id="logo" src="ressources/logo epic jdr.png" height="150" alt="logo"></a>
                 <ul id="dropdownMenuCreer">
                     <li>créer</li>
                         <ul id="showMenuCreer" class="menuCache menuCacheAbsolute">
@@ -30,14 +30,26 @@
                 </ul>
                 <a href="./lancer_partie.html">lancer une partie</a>
                 <a href="./mon_compte.html">mon compte</a>
-                <a href="./accueil.html">déconnexion</a>
+                <a href="./index.html">déconnexion</a>
             </nav>
         </header>
         <main>
-                <button id="boutonJ1" onclick="choixAttaqueJ1(coupEpee); enableBoutonJ2()">choix attaque J1</button>
-                <button id="boutonJ2" onclick="choixAttaqueJ2(attaqueP); enableBoutonBattle()">choix attaque J2</button>
-                <button id="boutonBattle" onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
-        </main>
+                <!--<button id="boutonJ1" onclick="choixAttaqueJ1(bouleDeFeu)">choix attaque J1</button>
+                <button id="boutonJ2" onclick="choixAttaqueJ2(coupEpee)">choix attaque J2</button>-->
+                <label for="selectJ1">J1</label>
+                <select onchange="disabledBattle()" id="selectJ1" name="attaque">
+                    <option value="Attaque">--- Attaque ---</option>
+                    <option value="choixAttaqueJ1(coupEpee)">Coup d'épée</option>
+                    <option value="Boule de feu">Boule de feu</option>
+                </select>
+                <label for="selectJ2">J2</label>
+                <select onchange="disabledBattle()" id="selectJ2" name="attaque">
+                    <option value="Attaque">--- Attaque ---</option>
+                    <option value="choixAttaqueJ2(coupEpee)">Coup d'épée</option>
+                    <option value="Boule de feu">Boule de feu</option>
+                </select>
+                <button id="boutonBattle" onclick="selectAttaque(); choixAttaqueJ1; choixAttaqueJ2();priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
+            </main>
         <footer>
             <a href="./mention_legales.html">mentions légales</a>
             <a href="./politique_de_confidentialite.html">politique de confidentialité</a>

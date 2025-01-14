@@ -39,8 +39,8 @@ function mouseLeaveGerer(){
 let joueur=[
     stat={
         nom:"Antony",
-        pv:30,
-        pm:5,
+        pv:9999,
+        pm:10,
         atk:10,
         atkm:10,
         def:5,
@@ -54,8 +54,8 @@ compJoueur=[
         degats:0,
     },
     attaqueMagique={
-        cout:2,
-        degats:10,
+        cout:0,
+        degats:0,
     }
 ];
 joueur.push(compJoueur);
@@ -65,8 +65,8 @@ console.log(joueur);
 let pnj=[
     stat={
         nom:"Jury",
-        pv:30,
-        pm:5,
+        pv:9999,
+        pm:10,
         atk:10,
         atkm:10,
         def:5,
@@ -80,8 +80,8 @@ compPnj=[
         degats:0,
     },
     attaqueMagique={
-        cout:2,
-        degats:10,
+        cout:0,
+        degats:0,
     }
 ];
 pnj.push(compPnj);
@@ -141,8 +141,8 @@ function attaqueP(j1,j2){
 function attaqueM(j1,j2){
     if (j1[0].pm>=j1[1][1].cout){ //? vérif cout en mp
         j1[0].pm-=j1[1][1].cout; //? déduction du coût en mp
-        if (j1[1][1].degats>j2[0].defm){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
-            j2[0].pv-=j1[1][1].degats-pnj[0].defm; //? déduction des dégâts sur les pv
+        if (j1[1][1].degats+j1[0].atkm>j2[0].defm){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
+            j2[0].pv-=j1[1][1].degats+j1[0].atkm-pnj[0].defm; //? déduction des dégâts sur les pv
         }
     } else { console.log(j1[0].nom,"n'a pas assez de pm.");
 
@@ -158,45 +158,39 @@ function attaqueM(j1,j2){
 
 //* fonction qui contrôle les pv et les priorités grâce à la stat de vit et qui permet de un choix d'attaque
 let choixJ1;
-let choixJ2
+let choixJ2;
 function priorite(j1,choixJ1,j2,choixJ2){
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
             choixJ1(j1,j2); //? attaque de j1
             if(j2[0].pv<=0){ //? vérif si j2 est mort
-            console.log(j2[0].nom,"est mort.");
+                j2[0].pv=0;
+            console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
             } 
             else {
                 choixJ2(j2,j1); //? attaque de j2
                 if(j1[0].pv<=0){ //? vérif si j1 est mort
-                    console.log(j1[0].nom,"est mort.");
+                    j1[0].pv=0;
+                    console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
                 }
             }    
         } 
         else { //? dans le cas ou j2 est plus rapide que j1
             choixJ2(j2,j1); //? attaque de j2
             if(j1[0].pv<=0){ //? vérif si j1 est mort
-                // console.log(j1[0].nom,"est mort.");
+                j1[0].pv=0;
+                console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
             } 
             else {
                 choixJ1(j1,j2); //? attaque de j1
                 if(j2[0].pv<=0){ //? vérif si j2 est mort
-                // console.log(j2[0].nom,"est mort.");
+                    j2[0].pv=0;
+                console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
                 }
             }
         }    
-        if(j1[0].pv<=0){
-            console.log(j1[0].nom,"est mort.");
-        }
-        else{
-            console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm");
-        }
-        if(j2[0].pv<=0){
-            console.log(j2[0].nom,"est mort.");
-        }
-        else{
-            console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
-        }
+        console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm");
+        console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
         boutonBattle.disabled=true;
         boutonJ2.disabled=true;
     } 
@@ -228,6 +222,7 @@ function choixAttaqueJ2(f){
 }
 
 
+
 // choixAttaqueJ1(attaqueM);
 // console.log(choixJ1);
 
@@ -242,20 +237,38 @@ function coupEpee(j1,j2){
     j1[1][0].degats=0;
     // console.log(j1[1][0].degats);
 }
+function bouleDeFeu(j1,j2){
+    j1[1][1].cout+=2;
+    j1[1][1].degats+=10;
+    console.log(j1[0].nom,"utilise Boule de feu!")
+    // console.log(j1[1][1].degats);
+    // console.log(j1[1][1].cout);
+    attaqueM(j1,j2);
+    j1[1][1].degats=0;
+    j1[1][1].cout=0;
+    // console.log(j1[1][1].degats);
+    // console.log(j1[1][1].cout);
+}
 
 //! config boutons battle
 const boutonBattle=document.getElementById("boutonBattle");
-// console.log(boutonBattle);
-const boutonJ1=document.getElementById("boutonJ1")
-// console.log(boutonJ1);
-const boutonJ2=document.getElementById("boutonJ2");
-// console.log(boutonJ2);
-boutonJ2.disabled=true
+const selectJ1=document.getElementById("selectJ1");
+const selectJ2=document.getElementById("selectJ2");
+
 boutonBattle.disabled=true
 
-function enableBoutonJ2(){
-    boutonJ2.disabled=false;
+function disabledBattle(){
+    if(selectJ1.value=="Attaque" || selectJ2.value=="Attaque"){
+        boutonBattle.disabled=true;
+    }
+    else if(selectJ1.value!="Attaque" && selectJ2.value!="Attaque"){
+        boutonBattle.disabled=false;
+    }  
 }
-function enableBoutonBattle(){
-    boutonBattle.disabled=false;
+function selectAttaque(){
+    choixJ1=selectJ1.value;
+    choixJ2=selectJ2.value;
+    console.log(choixJ1);
+    console.log(choixJ2);
 }
+// selectAttaque();
