@@ -35,13 +35,13 @@ nav{
 }
 #logo:hover{
     transform: scale(120%);
-    transition: 0.5s;
+    transition: 0.1s;
 }
 a{
     text-decoration: none;
     color: white;
 }
-ul> li, nav> a{
+nav> ul> li, nav> a{
     list-style: none;
     cursor: pointer;
     color: white;
@@ -55,9 +55,23 @@ ul> li, nav> a{
     align-items: center;
     text-align: center;
 }
-ul> li:hover, nav> a:hover{
+nav> ul> li:hover, nav> a:hover{
     background-color: #f4e8c1;
     color: black;
+}
+.liDropdown{
+    list-style: none;
+    cursor: pointer;
+    color: white;
+    width: 144px;
+    height: 44px;
+    background-color: black;
+    border: solid 3px #592E83;;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 li>a{
     width: 150px;

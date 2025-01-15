@@ -117,8 +117,7 @@ console.log(pnj);
 // console.log(joueur);
 // console.log(pnj);
 
-//! création des fonctions
-
+//! création des fonctions de simulation de combat
 //* réalistation d'une attaque physique
 function attaqueP(j1,j2){
     if (j1[0].pm>=j1[1][0].cout){ //? vérif cout en mp
@@ -157,9 +156,25 @@ function attaqueM(j1,j2){
 // console.log(joueur);
 // console.log(pnj);
 
-//* fonction qui contrôle les pv et les priorités grâce à la stat de vit et qui permet de un choix d'attaque
+//* fonctions pour le choix de l'attaque (permet de stocker le fonction(attaque) dans une variable)
 let choixJ1;
 let choixJ2;
+
+function choixAttaqueJ1(f){
+    choixJ1=f;
+    // console.log(choixJ1);
+}
+function choixAttaqueJ2(f){
+    choixJ2=f;
+    // console.log(choixJ2);
+}
+// choixAttaqueJ1(attaqueM);
+// console.log(choixJ1);
+
+// choixAttaqueJ2(attaqueP);
+// console.log(choixJ2);
+
+//* fonction qui contrôle les pv et les priorités grâce à la stat de vit
 function priorite(j1,choixJ1,j2,choixJ2){
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
@@ -194,10 +209,13 @@ function priorite(j1,choixJ1,j2,choixJ2){
         console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
         // boutonBattle.disabled=true;
         // boutonJ2.disabled=true;
+        readyJ1=0;
+        readyJ2=0;
+        disabledBattle();
     } 
     else {
         if (j1[0].pv<=0){
-        console.log(j1[0].nom,"n'a plus de pv.");
+            console.log(j1[0].nom,"n'a plus de pv.");
         } 
         else{ 
             console.log(j2[0].nom,"n'a plus de pv.");
@@ -212,21 +230,32 @@ function priorite(j1,choixJ1,j2,choixJ2){
 // console.log(joueur);
 // console.log(pnj);
 
-//* fonctions pour le choix de l'attaque
-function choixAttaqueJ1(f){
-    choixJ1=f;
-    // console.log(choixJ1);
-}
-function choixAttaqueJ2(f){
-    choixJ2=f;
-    // console.log(choixJ2);
-}
+//! config boutons battle
+const boutonBattle=document.getElementById("boutonBattle");
+let readyJ1=0;
+let readyJ2=0; //? variables qui permettront de vérouiller/dévérouiller le bouton Battle si les deux joueurs n'on pas sélectionné une attaque (0=vérouillé, 1=dévérouillé)
 
-// choixAttaqueJ1(attaqueM);
-// console.log(choixJ1);
+function readyCheckJ1(){ //? fonction qui permet de valider qu'un choix à été fait par J1
+    readyJ1=1;
+    console.log(readyJ1);
+}
+function readyCheckJ2(){ //? fonction qui permet de valider qu'un choix à été fait par J2
+    readyJ2=1;
+    console.log(readyJ2);
+}
+function disabledBattle(){ //? fonction qui controle les valeurs 0 et 1 pour vérouiller/dévérouiller le bouton Battle
+    if(readyJ1==0 || readyJ2==0){
+        boutonBattle.disabled=true;
+    }
+    else if(readyJ1==1 && readyJ2==1){
+        boutonBattle.disabled=false;
+    }  
+}
+disabledBattle();
 
-// choixAttaqueJ2(attaqueP);
-// console.log(choixJ2);
+//! création des fonctions pour les différentes attaques
+const selectCoupEpee=document.getElementsByClassName("coupEpee");
+const selectBouleDeFeu=document.getElementsByClassName("bouleDeFeu");
 
 function coupEpee(j1,j2){
     j1[1][0].degats+=5;
@@ -248,19 +277,3 @@ function bouleDeFeu(j1,j2){
     // console.log(j1[1][1].degats);
     // console.log(j1[1][1].cout);
 }
-
-//! config boutons battle
-const boutonBattle=document.getElementById("boutonBattle");
-const selectCoupEpee=document.getElementsByClassName("coupEpee");
-const selectBouleDeFeu=document.getElementsByClassName("bouleDeFeu");
-
-// boutonBattle.disabled=true
-
-// function disabledBattle(){
-//     if(selectJ1.value=="Attaque" || selectJ2.value=="Attaque"){
-//         boutonBattle.disabled=true;
-//     }
-//     else if(selectJ1.value!="Attaque" && selectJ2.value!="Attaque"){
-//         boutonBattle.disabled=false;
-//     }  
-// }

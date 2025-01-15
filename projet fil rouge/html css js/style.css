@@ -15,7 +15,7 @@
 }
 .boutonJaune:hover{
     transform: scale(120%);
-    transition: 0.5s;
+    transition: 0.1s;
 }
 input{
     width: 200px;

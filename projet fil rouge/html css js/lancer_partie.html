@@ -34,16 +34,25 @@
             </nav>
         </header>
         <main>
-            <p>J1</p>
+            <h3>J1</h3>
             <ul>
-                <li><button class="coupEpee" onclick="choixAttaqueJ1(coupEpee)">Coup d'épée</button></li>
-                <li><button class="bouleDeFeu" onclick="choixAttaqueJ1(bouleDeFeu)">Boule de feu</button></li>
+                <li>Attaque
+                    <ul>
+                        <li class="coupEpee" onclick="choixAttaqueJ1(coupEpee); readyCheckJ1(); disabledBattle()">Coup d'épée</li>
+                        <li class="bouleDeFeu" onclick="choixAttaqueJ1(bouleDeFeu); readyCheckJ1(); disabledBattle()">Boule de feu</li>
+                    </ul>
+                </li>
             </ul>
-            <p>J2</p>
+        
+            <h3>J2</h3>
             <ul>
-                <li><button class="coupEpee" onclick="choixAttaqueJ2(coupEpee)">Coup d'épée</button></li>
-                <li><button class="bouleDeFeu" onclick="choixAttaqueJ2(bouleDeFeu)">Boule de feu</button></li>
-            </ul>   
+                <li>Attaque
+                    <ul>
+                        <li class="coupEpee" onclick="choixAttaqueJ2(coupEpee); readyCheckJ2(); disabledBattle()">Coup d'épée</li>
+                        <li class="bouleDeFeu" onclick="choixAttaqueJ2(bouleDeFeu); readyCheckJ2(); disabledBattle()">Boule de feu</li>
+                    </ul> 
+                </li>
+            </ul>  
                 <button id="boutonBattle" onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
             </main>
         <footer>
