@@ -34,21 +34,17 @@
             </nav>
         </header>
         <main>
-                <!--<button id="boutonJ1" onclick="choixAttaqueJ1(bouleDeFeu)">choix attaque J1</button>
-                <button id="boutonJ2" onclick="choixAttaqueJ2(coupEpee)">choix attaque J2</button>-->
-                <label for="selectJ1">J1</label>
-                <select onchange="disabledBattle()" id="selectJ1" name="attaque">
-                    <option value="Attaque">--- Attaque ---</option>
-                    <option value="choixAttaqueJ1(coupEpee)">Coup d'épée</option>
-                    <option value="Boule de feu">Boule de feu</option>
-                </select>
-                <label for="selectJ2">J2</label>
-                <select onchange="disabledBattle()" id="selectJ2" name="attaque">
-                    <option value="Attaque">--- Attaque ---</option>
-                    <option value="choixAttaqueJ2(coupEpee)">Coup d'épée</option>
-                    <option value="Boule de feu">Boule de feu</option>
-                </select>
-                <button id="boutonBattle" onclick="selectAttaque(); choixAttaqueJ1; choixAttaqueJ2();priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
+            <p>J1</p>
+            <ul>
+                <li><button class="coupEpee" onclick="choixAttaqueJ1(coupEpee)">Coup d'épée</button></li>
+                <li><button class="bouleDeFeu" onclick="choixAttaqueJ1(bouleDeFeu)">Boule de feu</button></li>
+            </ul>
+            <p>J2</p>
+            <ul>
+                <li><button class="coupEpee" onclick="choixAttaqueJ2(coupEpee)">Coup d'épée</button></li>
+                <li><button class="bouleDeFeu" onclick="choixAttaqueJ2(bouleDeFeu)">Boule de feu</button></li>
+            </ul>   
+                <button id="boutonBattle" onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button>
             </main>
         <footer>
             <a href="./mention_legales.html">mentions légales</a>

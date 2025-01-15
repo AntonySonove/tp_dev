@@ -118,6 +118,7 @@ console.log(pnj);
 // console.log(pnj);
 
 //! création des fonctions
+
 //* réalistation d'une attaque physique
 function attaqueP(j1,j2){
     if (j1[0].pm>=j1[1][0].cout){ //? vérif cout en mp
@@ -191,8 +192,8 @@ function priorite(j1,choixJ1,j2,choixJ2){
         }    
         console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm");
         console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
-        boutonBattle.disabled=true;
-        boutonJ2.disabled=true;
+        // boutonBattle.disabled=true;
+        // boutonJ2.disabled=true;
     } 
     else {
         if (j1[0].pv<=0){
@@ -221,8 +222,6 @@ function choixAttaqueJ2(f){
     // console.log(choixJ2);
 }
 
-
-
 // choixAttaqueJ1(attaqueM);
 // console.log(choixJ1);
 
@@ -231,7 +230,7 @@ function choixAttaqueJ2(f){
 
 function coupEpee(j1,j2){
     j1[1][0].degats+=5;
-    console.log(j1[0].nom,"utilise Coup d'épée!")
+    console.log(j1[0].nom,"utilise Coup d'épée !")
     // console.log(j1[1][0].degats);
     attaqueP(j1,j2);
     j1[1][0].degats=0;
@@ -240,7 +239,7 @@ function coupEpee(j1,j2){
 function bouleDeFeu(j1,j2){
     j1[1][1].cout+=2;
     j1[1][1].degats+=10;
-    console.log(j1[0].nom,"utilise Boule de feu!")
+    console.log(j1[0].nom,"utilise Boule de feu !")
     // console.log(j1[1][1].degats);
     // console.log(j1[1][1].cout);
     attaqueM(j1,j2);
@@ -252,23 +251,16 @@ function bouleDeFeu(j1,j2){
 
 //! config boutons battle
 const boutonBattle=document.getElementById("boutonBattle");
-const selectJ1=document.getElementById("selectJ1");
-const selectJ2=document.getElementById("selectJ2");
+const selectCoupEpee=document.getElementsByClassName("coupEpee");
+const selectBouleDeFeu=document.getElementsByClassName("bouleDeFeu");
 
-boutonBattle.disabled=true
+// boutonBattle.disabled=true
 
-function disabledBattle(){
-    if(selectJ1.value=="Attaque" || selectJ2.value=="Attaque"){
-        boutonBattle.disabled=true;
-    }
-    else if(selectJ1.value!="Attaque" && selectJ2.value!="Attaque"){
-        boutonBattle.disabled=false;
-    }  
-}
-function selectAttaque(){
-    choixJ1=selectJ1.value;
-    choixJ2=selectJ2.value;
-    console.log(choixJ1);
-    console.log(choixJ2);
-}
-// selectAttaque();
+// function disabledBattle(){
+//     if(selectJ1.value=="Attaque" || selectJ2.value=="Attaque"){
+//         boutonBattle.disabled=true;
+//     }
+//     else if(selectJ1.value!="Attaque" && selectJ2.value!="Attaque"){
+//         boutonBattle.disabled=false;
+//     }  
+// }
