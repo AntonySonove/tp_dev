@@ -30,11 +30,18 @@ main{
 #showMenuAttaqueJ1, #showMenuAttaqueJ2{
     margin-bottom: 150px;
 }
-.nomAttaque{
+#nomAttaqueJ1, #nomAttaqueJ2{
     background-color: #f4e8c1;
     border: solid 3px #592E83;
     border-radius: 3px;
-    color: white;
-    padding: 25px;
+    color: black;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    width: 115px;
+    height: 15px;
     
+}
+h4{
+    text-align: center;
 }

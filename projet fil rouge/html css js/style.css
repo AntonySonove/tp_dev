@@ -58,3 +58,6 @@ input{
 .alignEnd{
     align-items: flex-end;
 }
+.alignCenter{
+    align-items: center;
+}

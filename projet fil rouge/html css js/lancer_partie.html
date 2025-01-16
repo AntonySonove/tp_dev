@@ -34,39 +34,47 @@
             </nav>
         </header>
         <main>
-            <div class="column gap25">
+            <div class="column gap25 alignCenter">
                 <div id="recapBattleP" class="row justifyCenter">
                     <div id="recapBattleB"></div>
                 </div>
                 <div id="infoJoueur" class="row spaceBetween gap25 alignEnd">
                     <div id="infoJ1" class="divJaune column gap25">
-                        <div class="row spaceBetween"><h4 id="currentNameJ1"></h4></div>
-                        <div class="row spaceBetween"><p>pv</p><p id="currentPvJ1"></p></div>
-                        <div class="row spaceBetween"><p>pm</p><p id="currentPmJ1"></p></div>
-                        <ul id="boutonAttaqueJ1">
-                            <li>Attaque
-                                <ul id="showMenuAttaqueJ1" class="menuCache menuCacheAbsolute">
-                                    <li class="coupEpee" onclick="choixAttaqueJ1(coupEpee); readyCheckJ1(); disabledBattle()">Coup d'épée</li>
-                                    <li class="bouleDeFeu" onclick="choixAttaqueJ1(bouleDeFeu); readyCheckJ1(); disabledBattle()">Boule de feu</li>
+                            <div class="row justifyCenter"><h4 id="currentNameJ1"></h4></div>
+                            <div class="row spaceBetween">
+                                <div class="row spaceBetween"><p>pv&nbsp;</p><p id="currentPvJ1"></p></div>
+                                <div class="row spaceBetween"><p>pm&nbsp;</p><p id="currentPmJ1"></p></div>
+                            </div>
+                            <div class="column alignCenter">
+                                <ul id="boutonAttaqueJ1">
+                                    <li>Attaque
+                                        <ul id="showMenuAttaqueJ1" class="menuCache menuCacheAbsolute">
+                                            <li class="coupEpee" onclick="choixAttaqueJ1(coupEpee); coupEpeeSelected(nomAttaqueJ1);  readyCheckJ1(); disabledBattle()">Coup d'épée</li>
+                                            <li class="bouleDeFeu" onclick="bouleDeFeuSelected(nomAttaqueJ1); choixAttaqueJ1(bouleDeFeu); readyCheckJ1(); disabledBattle()">Boule de feu</li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                            </li>
-                        </ul>
-                        <!--<div id="nomAttaqueJ1" class="nomAttaque"></div>-->
+                                <div id="nomAttaqueJ1" class="nomAttaque"></div>
+                            </div>
                     </div>
                     <button id="boutonBattle" classe="boutonJaune" onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button> 
                     <div id="infoJ2" class="divJaune column gap25">
-                        <div class="row spaceBetween"><h4 id="currentNameJ2"></h4></div>
-                        <div class="row spaceBetween"><p>pv</p><p id="currentPvJ2"></p></div>
-                        <div class="row spaceBetween"><p>pm</p><p id="currentPmJ2"></p></div>
-                        <ul id="boutonAttaqueJ2">
-                            <li>Attaque
-                                <ul id="showMenuAttaqueJ2" class="menuCache menuCacheAbsolute">
-                                    <li class="coupEpee" onclick="choixAttaqueJ2(coupEpee); readyCheckJ2(); disabledBattle()">Coup d'épée</li>
-                                    <li class="bouleDeFeu" onclick="choixAttaqueJ2(bouleDeFeu); readyCheckJ2(); disabledBattle()">Boule de feu</li>
-                                </ul> 
-                            </li>
-                        </ul>
-                        <!--<div id="nomAttaqueJ2" class="nomAttaque"></div>-->
+                        <div class="row justifyCenter"><h4 id="currentNameJ2"></h4></div>
+                        <div class="row spaceBetween">
+                            <div class="row spaceBetween"><p>pv&nbsp;</p><p id="currentPvJ2"></p></div>
+                            <div class="row spaceBetween"><p>pm&nbsp;</p><p id="currentPmJ2"></p></div>
+                        </div>
+                        <div class="column alignCenter">
+                            <ul id="boutonAttaqueJ2">
+                                <li>Attaque
+                                    <ul id="showMenuAttaqueJ2" class="menuCache menuCacheAbsolute">
+                                        <li class="coupEpee" onclick="coupEpeeSelected(nomAttaqueJ2); choixAttaqueJ2(coupEpee); readyCheckJ2(); disabledBattle()">Coup d'épée</li>
+                                        <li class="bouleDeFeu" onclick="bouleDeFeuSelected(nomAttaqueJ2); choixAttaqueJ2(bouleDeFeu); readyCheckJ2(); disabledBattle()">Boule de feu</li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                            <div id="nomAttaqueJ2" class="nomAttaque"></div>
+                        </div>
                     </div>
                 </div>
             </div>
