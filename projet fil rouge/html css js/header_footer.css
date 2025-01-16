@@ -1,13 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-html{
-    font-family: "instrument", sans-serif;
-}
-body{
-    background-color: #96705b;
-}
+
 /* header */
 #container{
     display: flex;
@@ -41,7 +32,7 @@ a{
     text-decoration: none;
     color: white;
 }
-nav> ul> li, nav> a{
+ul> li, nav> a{
     list-style: none;
     cursor: pointer;
     color: white;
@@ -55,23 +46,9 @@ nav> ul> li, nav> a{
     align-items: center;
     text-align: center;
 }
-nav> ul> li:hover, nav> a:hover{
+ul> li:hover, nav> a:hover{
     background-color: #f4e8c1;
     color: black;
-}
-.liDropdown{
-    list-style: none;
-    cursor: pointer;
-    color: white;
-    width: 144px;
-    height: 44px;
-    background-color: black;
-    border: solid 3px #592E83;;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 li>a{
     width: 150px;

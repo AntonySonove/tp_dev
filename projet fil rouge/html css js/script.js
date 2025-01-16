@@ -32,6 +32,31 @@ function mouseLeaveGerer(){
     showMenuGerer.classList.add("menuCache")
     // showMenuGerer.classList.add("menuCache");
 }
+//! dropdown des attaques
+const boutonAttaqueJ1= document.getElementById("boutonAttaqueJ1");
+const showMenuAttaqueJ1= document.getElementById("showMenuAttaqueJ1");
+
+boutonAttaqueJ1.onmouseenter=(function(){mouseEnterAttaqueJ1()});
+boutonAttaqueJ1.onmouseleave=(function(){mouseLeaveAttaqueJ1()});
+
+function mouseEnterAttaqueJ1(){
+    showMenuAttaqueJ1.classList.remove("menuCache");
+}
+function mouseLeaveAttaqueJ1(){
+    showMenuAttaqueJ1.classList.add("menuCache")
+}
+const boutonAttaqueJ2= document.getElementById("boutonAttaqueJ2");
+const showMenuAttaqueJ2= document.getElementById("showMenuAttaqueJ2");
+
+boutonAttaqueJ2.onmouseenter=(function(){mouseEnterAttaqueJ2()});
+boutonAttaqueJ2.onmouseleave=(function(){mouseLeaveAttaqueJ2()});
+
+function mouseEnterAttaqueJ2(){
+    showMenuAttaqueJ2.classList.remove("menuCache");
+}
+function mouseLeaveAttaqueJ2(){
+    showMenuAttaqueJ2.classList.add("menuCache")
+}
 
 // simulation
 
@@ -39,13 +64,15 @@ function mouseLeaveGerer(){
 let joueur=[
     stat={
         nom:"Antony",
-        pv:9999,
+        pv:50,
         pm:10,
         atk:10,
         atkm:10,
         def:5,
         defm:5,
         vit:2,
+        pvMax:50,
+        pmMax:10,
     },
 ];
 compJoueur=[
@@ -65,13 +92,15 @@ console.log(joueur);
 let pnj=[
     stat={
         nom:"Jury",
-        pv:9999,
+        pv:50,
         pm:10,
         atk:10,
         atkm:10,
         def:5,
         defm:5,
-        vit:3,
+        vit:1,
+        pvMax:50,
+        pmMax:10,
     },
 ];
 compPnj=[
@@ -175,6 +204,24 @@ function choixAttaqueJ2(f){
 // console.log(choixJ2);
 
 //* fonction qui contrôle les pv et les priorités grâce à la stat de vit
+const currentNameJ1=document.getElementById("currentNameJ1");
+const currentNameJ2=document.getElementById("currentNameJ2");
+currentNameJ1.innerText=joueur[0].nom
+currentNameJ2.innerText=pnj[0].nom
+
+const currentPvJ1=document.getElementById("currentPvJ1");
+const currentPmJ1=document.getElementById("currentPmJ1");
+const currentPvJ2=document.getElementById("currentPvJ2");
+const currentPmJ2=document.getElementById("currentPmJ2");
+currentPvJ1.style.color="red";
+currentPmJ1.style.color="blue";
+currentPvJ2.style.color="red";
+currentPmJ2.style.color="blue";
+currentPvJ1.innerText=`${joueur[0].pv}/${joueur[0].pvMax}`;
+currentPmJ1.innerText=`${joueur[0].pm}/${joueur[0].pmMax}`;
+currentPvJ2.innerText=`${pnj[0].pv}/${pnj[0].pvMax}`;
+currentPmJ2.innerText=`${pnj[0].pm}/${pnj[0].pmMax}`;
+
 function priorite(j1,choixJ1,j2,choixJ2){
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
@@ -182,12 +229,14 @@ function priorite(j1,choixJ1,j2,choixJ2){
             if(j2[0].pv<=0){ //? vérif si j2 est mort
                 j2[0].pv=0;
             console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
+            recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
             } 
             else {
                 choixJ2(j2,j1); //? attaque de j2
                 if(j1[0].pv<=0){ //? vérif si j1 est mort
                     j1[0].pv=0;
                     console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
+                    recapBattle.innerText+=`${j2[0].nom} a vaincu ${j1[0].nom}!\n`;
                 }
             }    
         } 
@@ -196,17 +245,23 @@ function priorite(j1,choixJ1,j2,choixJ2){
             if(j1[0].pv<=0){ //? vérif si j1 est mort
                 j1[0].pv=0;
                 console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
+                recapBattle.innerText+=`${j2[0].nom} a vaincu ${j1[0].nom}!\n`;
             } 
             else {
                 choixJ1(j1,j2); //? attaque de j1
                 if(j2[0].pv<=0){ //? vérif si j2 est mort
                     j2[0].pv=0;
                 console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
+                recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
                 }
             }
         }    
         console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm");
         console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
+        currentPvJ1.innerText=`${j1[0].pv}/${j1[0].pvMax}`
+        currentPmJ1.innerText=`${j1[0].pm}/${j1[0].pmMax}`
+        currentPvJ2.innerText=`${j2[0].pv}/${j2[0].pvMax}`
+        currentPmJ2.innerText=`${j2[0].pm}/${j2[0].pmMax}`
         // boutonBattle.disabled=true;
         // boutonJ2.disabled=true;
         readyJ1=0;
@@ -216,9 +271,11 @@ function priorite(j1,choixJ1,j2,choixJ2){
     else {
         if (j1[0].pv<=0){
             console.log(j1[0].nom,"n'a plus de pv.");
+            recapBattle.innerText+=`${j1[0].nom} n'a plus de pv.\n`
         } 
         else{ 
             console.log(j2[0].nom,"n'a plus de pv.");
+            recapBattle.innerText+=`${j2[0].nom} n'a plus de pv.\n`
         }
     }
 }  
@@ -237,11 +294,11 @@ let readyJ2=0; //? variables qui permettront de vérouiller/dévérouiller le bo
 
 function readyCheckJ1(){ //? fonction qui permet de valider qu'un choix à été fait par J1
     readyJ1=1;
-    console.log(readyJ1);
+    // console.log(readyJ1);
 }
 function readyCheckJ2(){ //? fonction qui permet de valider qu'un choix à été fait par J2
     readyJ2=1;
-    console.log(readyJ2);
+    // console.log(readyJ2);
 }
 function disabledBattle(){ //? fonction qui controle les valeurs 0 et 1 pour vérouiller/dévérouiller le bouton Battle
     if(readyJ1==0 || readyJ2==0){
@@ -258,8 +315,9 @@ const selectCoupEpee=document.getElementsByClassName("coupEpee");
 const selectBouleDeFeu=document.getElementsByClassName("bouleDeFeu");
 
 function coupEpee(j1,j2){
-    j1[1][0].degats+=5;
-    console.log(j1[0].nom,"utilise Coup d'épée !")
+    j1[1][0].degats+=2;
+    console.log(j1[0].nom,"utilise Coup d'épée!")
+    recapBattle.innerText+=`${j1[0].nom} utilise Coup d'épée!\n`;
     // console.log(j1[1][0].degats);
     attaqueP(j1,j2);
     j1[1][0].degats=0;
@@ -267,8 +325,9 @@ function coupEpee(j1,j2){
 }
 function bouleDeFeu(j1,j2){
     j1[1][1].cout+=2;
-    j1[1][1].degats+=10;
-    console.log(j1[0].nom,"utilise Boule de feu !")
+    j1[1][1].degats+=4;
+    console.log(j1[0].nom,"utilise Boule de feu!")
+    recapBattle.innerText+=`${j1[0].nom} utilise Boule de feu!\n`;
     // console.log(j1[1][1].degats);
     // console.log(j1[1][1].cout);
     attaqueM(j1,j2);
@@ -277,3 +336,30 @@ function bouleDeFeu(j1,j2){
     // console.log(j1[1][1].degats);
     // console.log(j1[1][1].cout);
 }
+
+//! infos qui apparaitront dans le html
+const infoJ1=document.getElementById("infoJ1");
+const infoJ2=document.getElementById("infoJ2");
+
+const recapBattle=document.createElement("div");
+const recapBattleP =document.getElementById("recapBattleP");
+const recapBattleB =document.getElementById("recapBattleB");
+// const lancerPartie=document.getElementById("lancerPartie");
+// const infoJoueur=document.getElementById("infoJoueur");
+recapBattle.classList.add("divJaune");
+recapBattle.style.minWidth="300px"
+recapBattle.style.fontSize="20px"
+recapBattleP.insertBefore(recapBattle, recapBattleB);
+// console.log(recapBattle);
+
+//! A tester
+// const nomAttaqueJ1=document.getElementById("nomAttaqueJ1");
+// const nomAttaqueJ2=document.getElementById("nomAttaqueJ2");
+
+// function nomBouleDeFeu(){
+//     nomAttaqueJ1.innerText=`Boule de feu`;
+// }
+
+// function nomAttaque(){
+//     attaqueJ1.innerText=
+// }
