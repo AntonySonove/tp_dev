@@ -38,8 +38,6 @@ const showMenuAttaqueJ1= document.getElementById("showMenuAttaqueJ1");
 
 boutonAttaqueJ1.onmouseenter=(function(){mouseEnterAttaqueJ1()});
 boutonAttaqueJ1.onmouseleave=(function(){mouseLeaveAttaqueJ1()});
-showMenuAttaqueJ1.onmouseenter=(function(){mouseEnterAttaqueJ1()});
-showMenuAttaqueJ1.onmouseleave=(function(){mouseLeaveAttaqueJ1()});
 
 function mouseEnterAttaqueJ1(){
     showMenuAttaqueJ1.classList.remove("menuCache");
@@ -152,36 +150,6 @@ currentPmJ1.innerText=`${joueur[0].pm}/${joueur[0].pmMax}`;
 currentPvJ2.innerText=`${pnj[0].pv}/${pnj[0].pvMax}`;
 currentPmJ2.innerText=`${pnj[0].pm}/${pnj[0].pmMax}`;
 
-+
-// choixAttaqueJ1(attaqueM);
-// console.log(choixJ1);
-
-// choixAttaqueJ2(attaqueP);
-// console.log(choixJ2);
-
-//! config boutons battle
-const boutonBattle=document.getElementById("boutonBattle");
-let readyJ1=0;
-let readyJ2=0; //? variables qui permettront de vérouiller/dévérouiller le bouton Battle si les deux joueurs n'on pas sélectionné une attaque (0=vérouillé, 1=dévérouillé)
-
-function readyCheckJ1(){ //? fonction qui permet de valider qu'un choix à été fait par J1
-    readyJ1=1;
-    // console.log(readyJ1);
-}
-function readyCheckJ2(){ //? fonction qui permet de valider qu'un choix à été fait par J2
-    readyJ2=1;
-    // console.log(readyJ2);
-}
-function disabledBattle(){ //? fonction qui controle les valeurs 0 et 1 pour vérouiller/dévérouiller le bouton Battle
-    if(readyJ1==0 || readyJ2==0){
-        boutonBattle.disabled=true;
-    }
-    else if(readyJ1==1 && readyJ2==1){
-        boutonBattle.disabled=false;
-    }  
-}
-disabledBattle();
-
 //! première ébauche de simulation (attaque physique et magique)
 //* le joueur lance attaquePhysique sur le pnj
 // pnj[0].pv-=joueur[1][0].degats-pnj[0].def;
@@ -220,9 +188,7 @@ function attaqueP(j1,j2){
         if (j1[1][0].degats+j1[0].atk>j2[0].def){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
             j2[0].pv-=j1[1][0].degats+j1[0].atk-pnj[0].def; //? déduction des dégâts sur les pv
         }
-    } else { console.log(j1[0].nom,"n'a pas assez de pm.");
-
-    }
+    } 
 }
 // attaqueP(joueur,pnj);
 // console.log(joueur);
@@ -239,8 +205,10 @@ function attaqueM(j1,j2){
         if (j1[1][1].degats+j1[0].atkm>j2[0].defm){ //? vérif stats pour ne pas se retrouver avec des valeurs négatives
             j2[0].pv-=j1[1][1].degats+j1[0].atkm-pnj[0].defm; //? déduction des dégâts sur les pv
         }
-    } else { console.log(j1[0].nom,"n'a pas assez de pm.");
-
+    } 
+    else { 
+        console.log(j1[0].nom,"n'a pas assez de pm.");
+        recapBattle.innerText+=`${j1[0].nom} n'a pas assez de pm.\n`;
     }
 }
 // attaqueM(joueur,pnj);
@@ -318,8 +286,45 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
 // console.log(joueur);
 // console.log(pnj);
 
-//! création des fonctions pour les différentes attaques
+//! config boutons battle
+const boutonBattle=document.getElementById("boutonBattle");
+let readyJ1=0;
+let readyJ2=0; //? variables qui permettront de vérouiller/dévérouiller le bouton Battle si les deux joueurs n'on pas sélectionné une attaque (0=vérouillé, 1=dévérouillé)
 
+function readyCheckJ1(){ //? fonction qui permet de valider qu'un choix à été fait par J1
+    readyJ1=1;
+    // console.log(readyJ1);
+}
+function readyCheckJ2(){ //? fonction qui permet de valider qu'un choix à été fait par J2
+    readyJ2=1;
+    // console.log(readyJ2);
+}
+function disabledBattle(){ //? fonction qui controle les valeurs 0 et 1 pour vérouiller/dévérouiller le bouton Battle
+    if(readyJ1==0 || readyJ2==0){
+        boutonBattle.disabled=true;
+    }
+    else if(readyJ1==1 && readyJ2==1){
+        boutonBattle.disabled=false;
+    }  
+}
+disabledBattle();
+
+let choixJ1;
+let choixJ2;
+
+function choixAttaqueJ1(f){
+    choixJ1=f;
+}
+function choixAttaqueJ2(f){
+    choixJ2=f;
+}
+// choixAttaqueJ1(attaqueM);
+// console.log(choixJ1);
+
+// choixAttaqueJ2(attaqueP);
+// console.log(choixJ2);
+
+//! création des fonctions pour les différentes attaques
 //* Coup d'épée
 const selectCoupEpee=document.getElementsByClassName("coupEpee");
 
