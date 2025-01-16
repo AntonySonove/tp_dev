@@ -255,7 +255,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
                 }
             }
         }    
-        console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm"); //? mise à jour des stats des joeurs
+        console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm"); //? mise à jour des stats des joueurs
         console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
         currentPvJ1.innerText=`${j1[0].pv}/${j1[0].pvMax}`
         currentPmJ1.innerText=`${j1[0].pm}/${j1[0].pmMax}`
