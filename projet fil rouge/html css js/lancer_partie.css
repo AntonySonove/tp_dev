@@ -9,11 +9,12 @@ main{
     display: flex;
 }
 #boutonBattle{
-    background-color: #f4e8c1;
-    border: solid 3px #592E83;
+    background-color: #EBCBAD;
+    border: solid 1px #8000ff;
     border-radius: 3px;
     font-weight: bold;
     color: black;
+    filter: drop-shadow(0 0 3px #8000ff);
     width: 150px;
     height: 50px;
     font-weight: bold;
@@ -22,17 +23,26 @@ main{
     cursor: pointer;
 }
 #boutonBattle:disabled{
-    background-color: #f4e8c179;
-    color: rgba(0, 0, 0, 0.521);
-    border: solid 3px #592e8377;
+    background-color: #EBCBAD50;
+    color: rgba(0, 0, 0, 0.50);
+    border: solid 1px #8000ff50;
     cursor: default;
+    filter: none;
+}
+#boutonBattle:disabled:hover{
+    transform: none;
+    transition: none;
+}
+#boutonBattle:hover{
+    transform: scale(120%);
+    transition: 0.1s;
 }
 #showMenuAttaqueJ1, #showMenuAttaqueJ2{
-    margin-bottom: 150px;
+    margin-bottom: 137px;
 }
 #nomAttaqueJ1, #nomAttaqueJ2{
-    background-color: #f4e8c1;
-    border: solid 3px #592E83;
+    background-color: #FBF4EE;
+    border: solid 1px #8000ff;
     border-radius: 3px;
     color: black;
     padding: 5px;
@@ -40,6 +50,7 @@ main{
     text-align: center;
     width: 115px;
     height: 15px;
+    margin-top: -1px;
     
 }
 h4{

@@ -128,7 +128,8 @@ const recapBattleB =document.getElementById("recapBattleB");
 recapBattle.classList.add("divJaune");
 recapBattle.style.minWidth="300px"
 recapBattle.style.fontSize="20px"
-recapBattleP.insertBefore(recapBattle, recapBattleB);
+recapBattle.style.lineHeight="1.5"
+// recapBattleP.insertBefore(recapBattle, recapBattleB);
 // console.log(recapBattle);
 
 //*mise en place du texte qui apparaitra avant la première simulation de combat
@@ -222,6 +223,7 @@ function attaqueM(j1,j2){
 //! fonction de simulation de combat qui contrôle les pv et les priorités grâce à la stat de vit
 
 function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions stockées lors du choix de l'attaque
+    recapBattleP.insertBefore(recapBattle, recapBattleB);
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
             choixJ1(j1,j2); //? attaque de j1
@@ -330,7 +332,7 @@ const selectCoupEpee=document.getElementsByClassName("coupEpee");
 
 function coupEpee(j1,j2){
     j1[1][0].degats+=2;
-    console.log(j1[0].nom,"utilise Coup d'épée!")
+    console.log(j1[0].nom,"utilise Coup d'épée!");
     recapBattle.innerText+=`${j1[0].nom} utilise Coup d'épée!\n`;
     // console.log(j1[1][0].degats);
     attaqueP(j1,j2);
@@ -355,7 +357,7 @@ const selectBouleDeFeu=document.getElementsByClassName("bouleDeFeu");
 function bouleDeFeu(j1,j2){
     j1[1][1].cout+=2;
     j1[1][1].degats+=4;
-    console.log(j1[0].nom,"utilise Boule de feu!")
+    console.log(j1[0].nom,"utilise Boule de feu!");
     recapBattle.innerText+=`${j1[0].nom} utilise Boule de feu!\n`;
     // console.log(j1[1][1].degats);
     // console.log(j1[1][1].cout);

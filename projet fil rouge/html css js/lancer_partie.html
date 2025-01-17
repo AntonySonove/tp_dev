@@ -35,9 +35,6 @@
         </header>
         <main>
             <div class="column gap25 alignCenter">
-                <div id="recapBattleP" class="row justifyCenter">
-                    <div id="recapBattleB"></div>
-                </div>
                 <div id="infoJoueur" class="row spaceBetween gap25 alignEnd">
                     <div id="infoJ1" class="divJaune column gap25">
                             <div class="row justifyCenter"><h4 id="currentNameJ1"></h4></div>
@@ -47,10 +44,10 @@
                             </div>
                             <div class="column alignCenter">
                                 <ul id="boutonAttaqueJ1">
-                                    <li>Attaque
+                                    <li class="boutonAttaque">Attaque
                                         <ul id="showMenuAttaqueJ1" class="menuCache menuCacheAbsolute">
-                                            <li class="coupEpee" onclick="choixAttaqueJ1(coupEpee); coupEpeeSelected(nomAttaqueJ1);  readyCheckJ1(); disabledBattle()">Coup d'épée</li>
-                                            <li class="bouleDeFeu" onclick="bouleDeFeuSelected(nomAttaqueJ1); choixAttaqueJ1(bouleDeFeu); readyCheckJ1(); disabledBattle()">Boule de feu</li>
+                                            <li class="coupEpee boutonAttaque" onclick="choixAttaqueJ1(coupEpee); coupEpeeSelected(nomAttaqueJ1);  readyCheckJ1(); disabledBattle()">Coup d'épée</li>
+                                            <li class="bouleDeFeu boutonAttaque" onclick="bouleDeFeuSelected(nomAttaqueJ1); choixAttaqueJ1(bouleDeFeu); readyCheckJ1(); disabledBattle()">Boule de feu</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -76,6 +73,9 @@
                             <div id="nomAttaqueJ2" class="nomAttaque"></div>
                         </div>
                     </div>
+                </div>
+                <div id="recapBattleP" class="row justifyCenter">
+                    <div id="recapBattleB"></div>
                 </div>
             </div>
         </main>
