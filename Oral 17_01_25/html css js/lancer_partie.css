@@ -1,0 +1,47 @@
+@import url(style.css);
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 300px;
+    gap: 50px;
+}
+#lancerPartie{
+    display: flex;
+}
+#boutonBattle{
+    background-color: #f4e8c1;
+    border: solid 3px #592E83;
+    border-radius: 3px;
+    font-weight: bold;
+    color: black;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+#boutonBattle:disabled{
+    background-color: #f4e8c179;
+    color: rgba(0, 0, 0, 0.521);
+    border: solid 3px #592e8377;
+    cursor: default;
+}
+#showMenuAttaqueJ1, #showMenuAttaqueJ2{
+    margin-bottom: 150px;
+}
+#nomAttaqueJ1, #nomAttaqueJ2{
+    background-color: #f4e8c1;
+    border: solid 3px #592E83;
+    border-radius: 3px;
+    color: black;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    width: 115px;
+    height: 15px;
+    
+}
+h4{
+    text-align: center;
+}
