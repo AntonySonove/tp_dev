@@ -121,8 +121,8 @@ const infoJ1=document.getElementById("infoJ1");
 const infoJ2=document.getElementById("infoJ2");
 
 const recapBattle=document.createElement("div");
-const recapBattleP =document.getElementById("recapBattleP");
-const recapBattleB =document.getElementById("recapBattleB");
+const recapBattleP=document.getElementById("recapBattleP");
+const recapBattleB=document.getElementById("recapBattleB");
 // const lancerPartie=document.getElementById("lancerPartie");
 // const infoJoueur=document.getElementById("infoJoueur");
 recapBattle.classList.add("divJaune");
@@ -131,6 +131,13 @@ recapBattle.style.fontSize="20px"
 recapBattle.style.lineHeight="1.5"
 // recapBattleP.insertBefore(recapBattle, recapBattleB);
 // console.log(recapBattle);
+
+//! construction des ul et li pour une meilleur visibilité dans le récap de la simulation
+const recapBattleDiv=document.createElement("div");
+const recapBattleUl=document.createElement("ul");
+const recapBattleLi=document.createElement("li");
+recapBattleDiv.style.color="blue";
+recapBattleLi.innerText="camarche?"
 
 //*mise en place du texte qui apparaitra avant la première simulation de combat
 const currentNameJ1=document.getElementById("currentNameJ1");
