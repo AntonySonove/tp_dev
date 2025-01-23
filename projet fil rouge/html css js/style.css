@@ -21,7 +21,7 @@ body{
 }
 .boutonJaune{
     background-color: #EBCBAD;
-    border: solid 3px #8000ff;
+    border: solid 1px #8000ff;
     border-radius: 3px;
     font-weight: bold;
     color: black;

@@ -97,7 +97,7 @@ let pnj=[
         atkm:10,
         def:5,
         defm:5,
-        vit:1,
+        vit:3,
         pvMax:50,
         pmMax:6,
     },
@@ -209,7 +209,7 @@ function attaqueM(j1,j2){
     } 
     else { 
         console.log(j1[0].nom,"n'a pas assez de pm.");
-        recapBattle.innerText+=`${j1[0].nom} n'a pas assez de pm.\n`;
+        recapBattle.innerText+=`mais ${j1[0].nom} n'a pas assez de pm.\n`;
     }
 }
 // attaqueM(joueur,pnj);
@@ -221,10 +221,11 @@ function attaqueM(j1,j2){
 // console.log(pnj);
 
 //! fonction de simulation de combat qui contrôle les pv et les priorités grâce à la stat de vit
-
+let tour=0;
 function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions stockées lors du choix de l'attaque
     recapBattleP.insertBefore(recapBattle, recapBattleB);
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
+        recapBattle.innerText+=`TOUR ${tour+=1}\n`
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
             choixJ1(j1,j2); //? attaque de j1
             if(j2[0].pv<=0){ //? vérif si j2 est mort
@@ -278,7 +279,8 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
             console.log(j2[0].nom,"n'a plus de pv.");
             recapBattle.innerText+=`${j2[0].nom} n'a plus de pv.\n`
         }
-    }emptySelected();
+    }
+    emptySelected();
 }  
 // priorite(joueur,attaqueM,pnj,attaqueM);
 // console.log(joueur);

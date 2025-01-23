@@ -1,6 +1,7 @@
 @import url(style.css);
 .boutonConnexionInscription{
     height: 94px;
+    filter: drop-shadow(0 0 3px #8000ff);
 }
 main{
     display: flex;
