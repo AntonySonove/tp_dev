@@ -97,7 +97,7 @@ let pnj=[
         atkm:10,
         def:5,
         defm:5,
-        vit:3,
+        vit:1,
         pvMax:50,
         pmMax:6,
     },
@@ -122,7 +122,8 @@ const infoJ2=document.getElementById("infoJ2");
 
 const recapBattle=document.createElement("div");
 const recapBattleP=document.getElementById("recapBattleP");
-const recapBattleB=document.getElementById("recapBattleB");
+let recapBattleA=document.getAnimations("recapBattleA");
+let recapBattleB=document.getElementById("recapBattleB");
 // const lancerPartie=document.getElementById("lancerPartie");
 // const infoJoueur=document.getElementById("infoJoueur");
 recapBattle.classList.add("divJaune");
@@ -133,11 +134,42 @@ recapBattle.style.lineHeight="1.5"
 // console.log(recapBattle);
 
 //! construction des ul et li pour une meilleur visibilité dans le récap de la simulation
-const recapBattleDiv=document.createElement("div");
-const recapBattleUl=document.createElement("ul");
-const recapBattleLi=document.createElement("li");
-recapBattleDiv.style.color="blue";
-recapBattleLi.innerText="camarche?"
+let tour=0;
+let recapBattleDiv=document.createElement("div");
+recapBattleDiv.style.minWidth="300px"
+recapBattleDiv.style.fontSize="20px"
+recapBattleDiv.style.lineHeight="1.5"
+//recapBattleDiv.innerText=`TOUR ${tour+=1}\n`
+// recapBattleP.appendChild(recapBattleDiv);
+let recapBattleUl;
+// let recapBattleTour;
+function addUl(){
+    let recapBattleTour=document.createElement("h6");
+    let text=document.createTextNode(`TOUR ${tour+=1}`);
+    recapBattleTour.appendChild(text);
+    recapBattleUl=document.createElement("ul");
+    recapBattleUl.classList.add("recapBattleUl");
+    recapBattleDiv.insertBefore(recapBattleUl,recapBattleDiv.children[0]);
+    recapBattleDiv.insertBefore(recapBattleTour, recapBattleDiv.children[0]);
+}
+function addLi(t){
+    let recapBattleLi=document.createElement("li");
+    recapBattleUl.appendChild(recapBattleLi);
+    let text=document.createTextNode(t);
+    recapBattleLi.appendChild(text);
+}
+// addUl();
+// addLi("tour1");
+// addUl();
+// addLi("tour2");
+// addLi("tour2");
+// addUl();
+// addLi("tour3");
+// addLi("tour3");
+// addLi("tour3");
+
+
+
 
 //*mise en place du texte qui apparaitra avant la première simulation de combat
 const currentNameJ1=document.getElementById("currentNameJ1");
@@ -217,6 +249,7 @@ function attaqueM(j1,j2){
     else { 
         console.log(j1[0].nom,"n'a pas assez de pm.");
         recapBattle.innerText+=`mais ${j1[0].nom} n'a pas assez de pm.\n`;
+        addLi(`mais ${j1[0].nom} n'a pas assez de pm.\n`);
     }
 }
 // attaqueM(joueur,pnj);
@@ -228,17 +261,21 @@ function attaqueM(j1,j2){
 // console.log(pnj);
 
 //! fonction de simulation de combat qui contrôle les pv et les priorités grâce à la stat de vit
-let tour=0;
 function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions stockées lors du choix de l'attaque
-    recapBattleP.insertBefore(recapBattle, recapBattleB);
+    //recapBattleP.insertBefore(recapBattle, recapBattleB);
+    recapBattleP.insertBefore(recapBattleDiv, recapBattleB);
+    addUl();
+    
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
-        recapBattle.innerText+=`TOUR ${tour+=1}\n`
+        // addLi(`tour ${tour+=1}\n`)
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
             choixJ1(j1,j2); //? attaque de j1
             if(j2[0].pv<=0){ //? vérif si j2 est mort
                 j2[0].pv=0;
             console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
             recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
+            addLi(`${j1[0].nom} a vaincu ${j2[0].nom}!\n`);
+            
             } 
             else {
                 choixJ2(j2,j1); //? attaque de j2
@@ -246,6 +283,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
                     j1[0].pv=0;
                     console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
                     recapBattle.innerText+=`${j2[0].nom} a vaincu ${j1[0].nom}!\n`;
+                    addLi(`${j2[0].nom} a vaincu ${j1[0].nom}!\n`);
                 }
             }    
         } 
@@ -255,6 +293,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
                 j1[0].pv=0;
                 console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
                 recapBattle.innerText+=`${j2[0].nom} a vaincu ${j1[0].nom}!\n`;
+                addLi(`${j2[0].nom} a vaincu ${j1[0].nom}!\n`);
             } 
             else {
                 choixJ1(j1,j2); //? attaque de j1
@@ -262,6 +301,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
                     j2[0].pv=0;
                 console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
                 recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
+                addLi(`${j1[0].nom} a vaincu ${j2[0].nom}!\n`);
                 }
             }
         }    
@@ -281,10 +321,12 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
         if (j1[0].pv<=0){
             console.log(j1[0].nom,"n'a plus de pv.");
             recapBattle.innerText+=`${j1[0].nom} n'a plus de pv.\n`
+            addLi(`${j1[0].nom} n'a plus de pv.\n`);
         } 
         else{ 
             console.log(j2[0].nom,"n'a plus de pv.");
             recapBattle.innerText+=`${j2[0].nom} n'a plus de pv.\n`
+            addLi(`${j2[0].nom} n'a plus de pv.\n`);
         }
     }
     emptySelected();
@@ -343,6 +385,7 @@ function coupEpee(j1,j2){
     j1[1][0].degats+=2;
     console.log(j1[0].nom,"utilise Coup d'épée!");
     recapBattle.innerText+=`${j1[0].nom} utilise Coup d'épée!\n`;
+    addLi(`${j1[0].nom} utilise Coup d'épée!\n`);
     // console.log(j1[1][0].degats);
     attaqueP(j1,j2);
     j1[1][0].degats=0;
@@ -368,6 +411,7 @@ function bouleDeFeu(j1,j2){
     j1[1][1].degats+=4;
     console.log(j1[0].nom,"utilise Boule de feu!");
     recapBattle.innerText+=`${j1[0].nom} utilise Boule de feu!\n`;
+    addLi(`${j1[0].nom} utilise Boule de feu!\n`);
     // console.log(j1[1][1].degats);
     // console.log(j1[1][1].cout);
     attaqueM(j1,j2);

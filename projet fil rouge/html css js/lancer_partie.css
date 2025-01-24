@@ -15,8 +15,8 @@ main{
     font-weight: bold;
     color: black;
     filter: drop-shadow(0 0 3px #8000ff);
-    width: 150px;
-    height: 50px;
+    width: 148px;
+    height: 48px;
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 25px;
@@ -37,8 +37,24 @@ main{
     transform: scale(120%);
     transition: 0.1s;
 }
+#boutonAttaqueJ1, #boutonAttaqueJ2{
+    list-style: none;
+    cursor: pointer;
+    color: black;
+    width: 148px;
+    height: 48px;
+    background-color: #EBCBAD;
+    border: solid 1px #8000ff;;
+    border-radius: 3px;
+    margin-top: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 #showMenuAttaqueJ1, #showMenuAttaqueJ2{
-    margin-bottom: 134px;
+    margin-top: 16px;
+    margin-left: -47.5px;
 }
 #nomAttaqueJ1, #nomAttaqueJ2{
     background-color: #FBF4EE;
@@ -56,3 +72,14 @@ main{
 h4{
     text-align: center;
 }
+.recapBattleUl{
+    background-color: #F7EADE;
+    border: solid 1px #8000ff;
+    border-radius: 3px;
+    list-style: none;
+    padding: 25px;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+/* #recapBattleP{
+    display: none;
+} */

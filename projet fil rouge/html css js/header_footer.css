@@ -32,12 +32,12 @@ a{
     text-decoration: none;
     color: black;
 }
-ul> li, nav> a{
+nav> ul> li, nav> a{
     list-style: none;
     cursor: pointer;
     color: black;
-    width: 144px;
-    height: 44px;
+    width: 148px;
+    height: 48px;
     background-color: #EBCBAD;
     border: solid 1px #8000ff;;
     border-radius: 3px;
@@ -47,20 +47,40 @@ ul> li, nav> a{
     align-items: center;
     text-align: center;
 }
-ul> li:hover, nav> a:hover{
+nav> ul> li:hover, nav> a:hover{
     background-color: #FBF4EE;
     color: Black;
 }
-li>a{
-    width: 150px;
-    height: 50px;
+nav> li>a{
+    width: 148px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-li>a:hover{
+.ulLi{
+    list-style: none;
+    cursor: pointer;
     color: black;
+    width: 148px;
+    height: 48px;
+    background-color: #EBCBAD;
+    border: solid 1px #8000ff;;
+    border-radius: 3px;
+    margin-top: -1px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content:center ;
+}
+.ulLi:hover{
+    background-color: #FBF4EE;
+    color: Black;
+}
+.flexLi{
+    display: flex;
+    justify-content: center;
 }
 .menuCache{
     display: none;
