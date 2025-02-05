@@ -15,17 +15,17 @@ CREATE TABLE IF NOT EXISTS vendeur(
 )Engine=InnoDB;
 
 CREATE TABLE IF NOT EXISTS ticket(
-id_ticket INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-date_creation DATETIME NOT NULL,
-id_vendeur INT NOT NULL
+	id_ticket INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	date_creation DATETIME NOT NULL,
+	id_vendeur INT NOT NULL
 )Engine=InnoDB;
 
 CREATE TABLE IF NOT EXISTS produit(
-id_produit INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-nom_produit VARCHAR(50) NOT NULL,
-`description` VARCHAR(255) NOT NULL,
-tarif DECIMAL(5,2) NOT NULL,
-id_categorie INT NOT NULL
+	id_produit INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nom_produit VARCHAR(50) NOT NULL,
+	`description` VARCHAR(255) NOT NULL,
+	tarif DECIMAL(5,2) NOT NULL,
+	id_categorie INT NOT NULL
 )Engine=InnoDB;
 
 -- Création de la table d'association
@@ -51,47 +51,45 @@ ALTER TABLE ticket
     REFERENCES vendeur(id_vendeur)
     ON DELETE CASCADE;
     
-INSERT INTO categorie(nom_categorie)
-VALUES('Électronique'),
-('Vêtements'),
-('Alimentation'),
-('Meubles'),
-('Jouets');
+INSERT INTO categorie(nom_categorie) VALUES
+	('Électronique'),
+	('Vêtements'),
+	('Alimentation'),
+	('Meubles'),
+	('Jouets');
     
-INSERT INTO produit(nom_produit, `description`, tarif, id_categorie)
-VALUES
-('Lait entier','Lait entier pasteurisé, bouteille de 1 litre.', 1.20, 3),
-('Pain de mie', 'Pain de mie tranché, paquet de 500g.', 1.50, 3),
-('Pâtes spaghetti','Pâtes spaghetti, paquet de 500g.', 0.90, 3),
-('Jus d\'orange', 'Jus d\'orange 100% pur jus, bouteille de 1 litre.',2.00,3),
-('Fromage râpé','Fromage râpé, sachet de 200g.',2.50, 3),
-('Chemise en lin','Chemise légère en lin, disponible en plusieurs couleurs.',35,2),
-('Pantalon chino','Pantalon chino en coton, coupe droite.',40,2),
-('Commode en bois','Commode en bois avec 4 tiroirs.', 150 ,4),
-('Bureau d\'ordinateur','Bureau d\'ordinateur avec étagères intégrées.',120,4),
-('Puzzle 3D','Puzzle 3D de la Tour Eiffel, 500 pièces.',20,5); 
+INSERT INTO produit(nom_produit, `description`, tarif, id_categorie) VALUES
+	('Lait entier','Lait entier pasteurisé, bouteille de 1 litre.', 1.20, 3),
+	('Pain de mie', 'Pain de mie tranché, paquet de 500g.', 1.50, 3),
+	('Pâtes spaghetti','Pâtes spaghetti, paquet de 500g.', 0.90, 3),
+	('Jus d\'orange', 'Jus d\'orange 100% pur jus, bouteille de 1 litre.',2.00,3),
+	('Fromage râpé','Fromage râpé, sachet de 200g.',2.50, 3),
+	('Chemise en lin','Chemise légère en lin, disponible en plusieurs couleurs.',35,2),
+	('Pantalon chino','Pantalon chino en coton, coupe droite.',40,2),
+	('Commode en bois','Commode en bois avec 4 tiroirs.', 150 ,4),
+	('Bureau d\'ordinateur','Bureau d\'ordinateur avec étagères intégrées.',120,4),
+	('Puzzle 3D','Puzzle 3D de la Tour Eiffel, 500 pièces.',20,5); 
 
 -- Ajouter des vendeurs
-INSERT INTO vendeur(prenom_vendeur, nom_vendeur)
-VALUES
-('Jean', 'Dupont'),
-('Marie','Curie'),
-('Pierre', 'Martin'),
-('Sophie','Durand'),
-('Lucien','Bernard');
+INSERT INTO vendeur(prenom_vendeur, nom_vendeur) VALUES
+	('Jean', 'Dupont'),
+	('Marie','Curie'),
+	('Pierre', 'Martin'),
+	('Sophie','Durand'),
+	('Lucien','Bernard');
 
 -- Ajouter 10 tickets de caisse
-INSERT INTO ticket(date_creation,id_vendeur)  VALUES
-('2024-10-10',1),
-('2024-06-02',2),
-('2023-08-21',3),
-('2024-07-09',3),
-('2024-01-02',3),
-('2024-09-07',4),
-('2023-01-05',4),
-('2024-11-12',4),
-('2024-11-12',5),
-('2024-12-22',5);
+INSERT INTO ticket(date_creation,id_vendeur) VALUES
+	('2024-10-10',1),
+	('2024-06-02',2),
+	('2023-08-21',3),
+	('2024-07-09',3),
+	('2024-01-02',3),
+	('2024-09-07',4),
+	('2023-01-05',4),
+	('2024-11-12',4),
+	('2024-11-12',5),
+	('2024-12-22',5);
 
 -- Assigner 3 produits à chaque ticket
 INSERT INTO produit_ticket(id_ticket, id_produit, quantite) VALUES
@@ -149,18 +147,62 @@ WHERE date_creation > "2024-01-01";
 DELETE FROM categorie
 WHERE id_categorie=1;
 
-DELETE FROM categorie
-WHERE id_categorie=5;
+DELETE FROM produit_ticket
+WHERE id_produit=10;
 DELETE FROM produit
 WHERE id_categorie=5;
+DELETE FROM categorie
+WHERE id_categorie=5;
 
+DELETE FROM produit_ticket
+WHERE id_ticket=1;
+DELETE FROM ticket
+WHERE id_ticket=1;
+DELETE FROM ticket
+WHERE id_vendeur=1;
 DELETE FROM vendeur
 WHERE id_vendeur=1;
 
+DELETE FROM produit_ticket
+WHERE id_ticket=3;
+DELETE FROM produit_ticket
+WHERE id_ticket=7;
 DELETE FROM ticket
 WHERE date_creation < "2024-01-01";
 
 DELETE FROM produit_ticket
 WHERE quantite > 9;
+
+SELECT nom_categorie
+FROM categorie;
+
+SELECT nom_vendeur AS nom , prenom_vendeur AS prenom
+FROM vendeur
+ORDER BY nom_vendeur ASC, prenom_vendeur ASC;
+
+SELECT id_ticket, date_creation
+FROM ticket
+-- WHERE date_creation > "2024-11-30";
+WHERE MONTH (date_creation) = 12;
+
+SELECT id_ticket, date_creation
+FROM ticket
+WHERE YEAR (date_creation) = "2024";
+
+SELECT nom_categorie, id_categorie
+FROM categorie;
+SELECT id_produit, nom_produit, tarif 
+FROM produit
+WHERE id_categorie=3;
+
+SELECT nom_produit, tarif, nom_categorie
+FROM produit
+INNER JOIN categorie
+ON produit.id_categorie = categorie.id_categorie
+WHERE produit.id_categorie=3;
+
+SELECT id_produit, nom_produit, tarif
+FROM produit
+WHERE nom_produit < "J" AND tarif > 1.5;
 
 -- DROP DATABASE caisse;
