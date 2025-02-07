@@ -72,8 +72,9 @@ p:active{
 
 /*bouton2*/
 
-#bouton2:hover{
-    animation : bouton2 0.2s infinite alternate;
+#bouton2{
+    animation : bouton2 0.1s 10 alternate;
+    /* animation-iteration-count: 10; */
 }
 @keyframes bouton2{
     0%{

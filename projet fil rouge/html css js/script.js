@@ -122,16 +122,11 @@ const infoJ2=document.getElementById("infoJ2");
 
 const recapBattle=document.createElement("div");
 const recapBattleP=document.getElementById("recapBattleP");
-let recapBattleA=document.getAnimations("recapBattleA");
-let recapBattleB=document.getElementById("recapBattleB");
-// const lancerPartie=document.getElementById("lancerPartie");
-// const infoJoueur=document.getElementById("infoJoueur");
 recapBattle.classList.add("divJaune");
 recapBattle.style.minWidth="300px"
 recapBattle.style.fontSize="20px"
 recapBattle.style.lineHeight="1.5"
-// recapBattleP.insertBefore(recapBattle, recapBattleB);
-// console.log(recapBattle);
+
 
 //! construction des ul et li pour une meilleur visibilité dans le récap de la simulation
 let tour=0;
@@ -139,10 +134,7 @@ let recapBattleDiv=document.createElement("div");
 recapBattleDiv.style.minWidth="300px"
 recapBattleDiv.style.fontSize="20px"
 recapBattleDiv.style.lineHeight="1.5"
-//recapBattleDiv.innerText=`TOUR ${tour+=1}\n`
-// recapBattleP.appendChild(recapBattleDiv);
 let recapBattleUl;
-// let recapBattleTour;
 function addUl(){
     let recapBattleTour=document.createElement("h6");
     let text=document.createTextNode(`TOUR ${tour+=1}`);
@@ -253,14 +245,13 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
     //recapBattleP.insertBefore(recapBattle, recapBattleB);
     recapBattleP.insertBefore(recapBattleDiv, recapBattleB);
     addUl();
-    
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
         // addLi(`tour ${tour+=1}\n`)
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
             choixJ1(j1,j2); //? attaque de j1
             if(j2[0].pv<=0){ //? vérif si j2 est mort
                 j2[0].pv=0;
-            console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
+            // console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
             recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
             addLi(`${j1[0].nom} a vaincu ${j2[0].nom}!\n`);
             
@@ -269,7 +260,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
                 choixJ2(j2,j1); //? attaque de j2
                 if(j1[0].pv<=0){ //? vérif si j1 est mort
                     j1[0].pv=0;
-                    console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
+                    // console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
                     recapBattle.innerText+=`${j2[0].nom} a vaincu ${j1[0].nom}!\n`;
                     addLi(`${j2[0].nom} a vaincu ${j1[0].nom}!\n`);
                 }
@@ -279,7 +270,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
             choixJ2(j2,j1); //? attaque de j2
             if(j1[0].pv<=0){ //? vérif si j1 est mort
                 j1[0].pv=0;
-                console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
+                // console.log(j2[0].nom,"a vaincu",j1[0].nom,"!");
                 recapBattle.innerText+=`${j2[0].nom} a vaincu ${j1[0].nom}!\n`;
                 addLi(`${j2[0].nom} a vaincu ${j1[0].nom}!\n`);
             } 
@@ -287,14 +278,14 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
                 choixJ1(j1,j2); //? attaque de j1
                 if(j2[0].pv<=0){ //? vérif si j2 est mort
                     j2[0].pv=0;
-                console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
+                // console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
                 recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
                 addLi(`${j1[0].nom} a vaincu ${j2[0].nom}!\n`);
                 }
             }
         }    
-        console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm"); //? mise à jour des stats des joueurs
-        console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
+        // console.log(j1[0].nom,":",j1[0].pv,"pv",j1[0].pm,"pm"); //? mise à jour des stats des joueurs
+        // console.log(j2[0].nom,":",j2[0].pv,"pv",j2[0].pm,"pm");
         currentPvJ1.innerText=`${j1[0].pv}/${j1[0].pvMax}`
         currentPmJ1.innerText=`${j1[0].pm}/${j1[0].pmMax}`
         currentPvJ2.innerText=`${j2[0].pv}/${j2[0].pvMax}`
@@ -307,12 +298,12 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
     } 
     else {
         if (j1[0].pv<=0){
-            console.log(j1[0].nom,"n'a plus de pv.");
+            // console.log(j1[0].nom,"n'a plus de pv.");
             recapBattle.innerText+=`${j1[0].nom} n'a plus de pv.\n`
             addLi(`${j1[0].nom} n'a plus de pv.\n`);
         } 
         else{ 
-            console.log(j2[0].nom,"n'a plus de pv.");
+            // console.log(j2[0].nom,"n'a plus de pv.");
             recapBattle.innerText+=`${j2[0].nom} n'a plus de pv.\n`
             addLi(`${j2[0].nom} n'a plus de pv.\n`);
         }
@@ -327,7 +318,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
 // console.log(joueur);
 // console.log(pnj);
 
-//! config boutons battle
+//! config bouton battle
 const boutonBattle=document.getElementById("boutonBattle");
 let readyJ1=0;
 let readyJ2=0; //? variables qui permettront de vérouiller/dévérouiller le bouton Battle si les deux joueurs n'on pas sélectionné une attaque (0=vérouillé, 1=dévérouillé)
@@ -349,6 +340,9 @@ function disabledBattle(){ //? fonction qui controle les valeurs 0 et 1 pour vé
     }  
 }
 disabledBattle();
+boutonBattle.addEventListener("click",()=>{
+    priorite(joueur,choixJ1,pnj,choixJ2);
+})
 
 let choixJ1;
 let choixJ2;
@@ -367,11 +361,9 @@ function choixAttaqueJ2(f){
 
 //! création des fonctions pour les différentes attaques
 //* Coup d'épée
-const selectCoupEpee=document.getElementsByClassName("coupEpee");
-
 function coupEpee(j1,j2){
     j1[1][0].degats+=2;
-    console.log(j1[0].nom,"utilise Coup d'épée!");
+    // console.log(j1[0].nom,"utilise Coup d'épée!");
     recapBattle.innerText+=`${j1[0].nom} utilise Coup d'épée!\n`;
     addLi(`${j1[0].nom} utilise Coup d'épée!\n`);
     // console.log(j1[1][0].degats);
@@ -390,14 +382,27 @@ function emptySelected(){
     nomAttaqueJ1.innerText=``;
     nomAttaqueJ2.innerText=``;
 }
+// ! appliquer le addEventListener sur les fonctions
+const coupEpeeButtonJ1=document.getElementById("coupEpeeButtonJ1");
+coupEpeeButtonJ1.addEventListener("click",()=>{
+    choixAttaqueJ1(coupEpee);
+    coupEpeeSelected(nomAttaqueJ1);
+    readyCheckJ1();
+    disabledBattle();
+});
+const coupEpeeButtonJ2=document.getElementById("coupEpeeButtonJ2");
+coupEpeeButtonJ2.addEventListener("click",()=>{
+    choixAttaqueJ2(coupEpee);
+    coupEpeeSelected(nomAttaqueJ2);
+    readyCheckJ2();
+    disabledBattle();
+});
 
 //* Boule de feu
-const selectBouleDeFeu=document.getElementsByClassName("bouleDeFeu");
-
 function bouleDeFeu(j1,j2){
     j1[1][1].cout+=2;
     j1[1][1].degats+=4;
-    console.log(j1[0].nom,"utilise Boule de feu!");
+    // console.log(j1[0].nom,"utilise Boule de feu!");
     recapBattle.innerText+=`${j1[0].nom} utilise Boule de feu!\n`;
     addLi(`${j1[0].nom} utilise Boule de feu!\n`);
     // console.log(j1[1][1].degats);
@@ -411,3 +416,17 @@ function bouleDeFeu(j1,j2){
 function bouleDeFeuSelected(j){
     j.innerText="Boule de feu"
 }
+const bouleDeFeuButtonJ1=document.getElementById("bouleDeFeuButtonJ1");
+bouleDeFeuButtonJ1.addEventListener("click",()=>{
+    choixAttaqueJ1(bouleDeFeu);
+    bouleDeFeuSelected(nomAttaqueJ1);
+    readyCheckJ1();
+    disabledBattle();
+});
+const bouleDeFeuButtonJ2=document.getElementById("bouleDeFeuButtonJ2");
+bouleDeFeuButtonJ2.addEventListener("click",()=>{
+    choixAttaqueJ2(bouleDeFeu);
+    bouleDeFeuSelected(nomAttaqueJ1);
+    readyCheckJ2();
+    disabledBattle();
+});

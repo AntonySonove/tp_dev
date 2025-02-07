@@ -44,17 +44,17 @@
                             </div>
                             <div class="column alignCenter">
                                 <ul id="boutonAttaqueJ1">
-                                    <li class="boutonAttaque">Attaque
+                                    <li>Attaque
                                         <ul id="showMenuAttaqueJ1" class="menuCache menuCacheAbsolute">
-                                            <li class="ulLi coupEpee boutonAttaque" onclick="choixAttaqueJ1(coupEpee); coupEpeeSelected(nomAttaqueJ1);  readyCheckJ1(); disabledBattle()">Coup d'épée</li>
-                                            <li class="ulLi bouleDeFeu boutonAttaque" onclick="bouleDeFeuSelected(nomAttaqueJ1); choixAttaqueJ1(bouleDeFeu); readyCheckJ1(); disabledBattle()">Boule de feu</li>
+                                            <li id="coupEpeeButtonJ1" class="ulLi ">Coup d'épée</li>
+                                            <li id="bouleDeFeuButtonJ1" class="ulLi ">Boule de feu</li>
                                         </ul>
                                     </li>
                                 </ul>
                                 <div id="nomAttaqueJ1" class="nomAttaque"></div>
                             </div>
                     </div>
-                    <button id="boutonBattle" classe="boutonJaune" onclick="priorite(joueur,choixJ1,pnj,choixJ2)">Battle!</button> 
+                    <button id="boutonBattle" class="boutonJaune">Battle!</button> 
                     <div id="infoJ2" class="divJaune column gap25">
                         <div class="row justifyCenter"><h4 id="currentNameJ2"></h4></div>
                         <div class="row spaceBetween">
@@ -65,8 +65,8 @@
                             <ul id="boutonAttaqueJ2">
                                 <li>Attaque
                                     <ul id="showMenuAttaqueJ2" class="menuCache menuCacheAbsolute">
-                                        <li class="ulLi coupEpee" onclick="coupEpeeSelected(nomAttaqueJ2); choixAttaqueJ2(coupEpee); readyCheckJ2(); disabledBattle()">Coup d'épée</li>
-                                        <li class="ulLi bouleDeFeu" onclick="bouleDeFeuSelected(nomAttaqueJ2); choixAttaqueJ2(bouleDeFeu); readyCheckJ2(); disabledBattle()">Boule de feu</li>
+                                        <li id="coupEpeeButtonJ2" class="ulLi">Coup d'épée</li>
+                                        <li id="bouleDeFeuButtonJ2" class="ulLi">Boule de feu</li>
                                     </ul> 
                                 </li>
                             </ul>
@@ -75,7 +75,6 @@
                     </div>
                 </div>
                 <div id="recapBattleP" class="column alignCenter">
-                    <ul id="recapBattleA"></ul>
                     <div id="recapBattleB"></div>
                 </div>
             </div>

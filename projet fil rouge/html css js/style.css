@@ -63,9 +63,18 @@ input{
 .justifyEnd{
     justify-content: end;
 }
+.alignStart{
+    align-items: flex-start;
+}
 .alignEnd{
     align-items: flex-end;
 }
 .alignCenter{
     align-items: center;
+}
+.justifySelfStart{
+    justify-self: flex-start;
+}
+.alignSelfStart{
+    align-self: flex-start;
 }

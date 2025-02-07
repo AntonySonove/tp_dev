@@ -80,6 +80,25 @@ h4{
     padding: 25px;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
-/* #recapBattleP{
-    display: none;
-} */
+#infoJ1{
+    animation : bouton2 0.1s 10 alternate;
+}
+@keyframes bouton2{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+#infoJ2{
+    animation : bouton2 0.1s 10 alternate;
+}
+@keyframes bouton2{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
