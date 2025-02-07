@@ -158,18 +158,6 @@ function addLi(t){
     let text=document.createTextNode(t);
     recapBattleLi.appendChild(text);
 }
-// addUl();
-// addLi("tour1");
-// addUl();
-// addLi("tour2");
-// addLi("tour2");
-// addUl();
-// addLi("tour3");
-// addLi("tour3");
-// addLi("tour3");
-
-
-
 
 //*mise en place du texte qui apparaitra avant la première simulation de combat
 const currentNameJ1=document.getElementById("currentNameJ1");

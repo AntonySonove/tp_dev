@@ -205,4 +205,132 @@ SELECT id_produit, nom_produit, tarif
 FROM produit
 WHERE nom_produit < "J" AND tarif > 1.5;
 
+SELECT id_produit, nom_produit, tarif
+FROM produit
+ORDER BY tarif DESC
+LIMIT 5;
+
+SELECT id_produit, nom_produit, `description`, tarif, 
+categorie.nom_categorie, categorie.id_categorie
+FROM produit
+INNER JOIN categorie
+ON produit.id_categorie = categorie.id_categorie;
+
+SELECT nom_produit, tarif, 
+produit_ticket.quantite
+FROM produit
+INNER JOIN produit_ticket
+ON produit.id_produit = produit_ticket.id_produit
+WHERE id_ticket=2;
+
+SELECT nom_produit, tarif, nom_categorie
+FROM ticket AS t
+INNER JOIN produit_ticket AS pt
+ON t.id_ticket=pt.id_ticket
+INNER JOIN produit AS p
+ON pt.id_produit=p.id_produit
+INNER JOIN categorie AS c
+ON p.id_categorie=c.id_categorie
+WHERE YEAR(t.date_creation) = 2024
+GROUP BY p.id_produit;
+
+SELECT nom_produit, tarif, nom_vendeur, prenom_vendeur
+FROM vendeur AS v
+INNER JOIN ticket AS t
+ON v.id_vendeur=t.id_vendeur
+INNER JOIN produit_ticket AS pt
+ON t.id_ticket=pt.id_ticket
+INNER JOIN produit AS p
+ON pt.id_produit=p.id_produit
+WHERE v.id_vendeur=4
+GROUP BY p.id_produit;
+
+SELECT nom_produit, tarif, nom_categorie
+FROM produit AS p
+INNER JOIN categorie AS c
+ON p.id_categorie=c.id_categorie
+WHERE c.nom_categorie="nouveau";
+
+SELECT id_produit, nom_produit, tarif, nom_categorie
+FROM produit AS p
+INNER JOIN categorie AS c
+ON p.id_categorie=c.id_categorie
+WHERE p.tarif > 2;
+
+SELECT nom_vendeur, prenom_vendeur
+FROM vendeur AS v
+LEFT JOIN ticket AS t
+ON v.id_vendeur=t.id_vendeur
+WHERE t.id_ticket IS NULL;
+
+INSERT INTO ticket (date_creation, id_vendeur) VALUES
+	("2023-02-26",5);
+
+SELECT id_ticket, date_creation, nom_vendeur, prenom_vendeur
+FROM ticket AS t
+INNER JOIN vendeur AS v
+ON t.id_vendeur=v.id_vendeur
+WHERE YEAR (date_creation)=2023;
+
+SELECT nom_produit, tarif, nom_categorie
+FROM ticket AS t
+INNER JOIN produit_ticket AS pt
+ON t.id_ticket=pt.id_ticket
+INNER JOIN produit AS p
+ON pt.id_produit=p.id_produit
+INNER JOIN categorie AS c
+ON p.id_categorie=c.id_categorie
+WHERE c.nom_categorie= "nouveau"
+GROUP BY p.id_produit;
+
+INSERT INTO produit (nom_produit,`description`, tarif, id_categorie) VALUES
+("jambon", "halal", 999, 3);
+
+-- liste des produits qui ont été vendu au moins une fois
+SELECT nom_produit, date_creation, p.id_produit
+FROM produit AS p
+INNER JOIN produit_ticket AS pt
+ON p.id_produit=pt.id_produit
+INNER JOIN ticket AS t
+ON pt.id_ticket=t.id_ticket
+INNER JOIN vendeur AS v
+ON t.id_vendeur=v.id_vendeur
+INNER JOIN categorie AS c
+ON p.id_categorie=c.id_categorie
+GROUP BY nom_produit;
+	-- ou
+SELECT DISTINCT nom_produit
+FROM produit AS p
+INNER JOIN produit_ticket AS pt
+ON p.id_produit=pt.id_produit
+WHERE quantite >0;
+
+-- vendeurs classés par ordre alphabétique
+SELECT nom_vendeur, prenom_vendeur
+FROM vendeur AS v
+GROUP BY nom_vendeur ASC;
+
+-- le venduer qui à réalisé la dernière vente
+SELECT nom_vendeur
+FROM ticket AS t
+INNER JOIN vendeur AS v
+ON v.id_vendeur=t.id_vendeur
+ORDER BY date_creation DESC LIMIT 1;
+
+-- Calculer le nombre de vendeurs
+SELECT COUNT(id_vendeur) AS "nombre de vendeurs"
+FROM vendeur AS v;
+
+-- moyenne de produits vendu
+SELECT AVG(quantite) AS "moyenne produits vendus"
+FROM produit_ticket;
+
+-- tickets dont le total est suppérieur à 10
+
+
+-- ajouter un produit avec une sous-requête
+INSERT INTO produit (nom_produit,`description`,tarif,id_categorie) VALUES
+("radis","du potager",0.5,
+	(SELECT id_categorie FROM categorie WHERE nom_categorie="nouveau"));
+
 -- DROP DATABASE caisse;
