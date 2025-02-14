@@ -80,25 +80,36 @@ h4{
     padding: 25px;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
-#infoJ1{
-    animation : bouton2 0.1s 10 alternate;
+/* .secousseJ1Prio2{
+    animation : secousse 5 0.05s alternate;
+    animation-delay: 1s;
 }
-@keyframes bouton2{
+.secousseJ1Prio1{
+    animation : secousse 5 0.05s alternate;
+    animation-delay: 1.5s;
+}
+.secousseJ2Prio2{
+    animation : secousse 5 0.05s alternate;
+    animation-delay: 1s;
+}
+.secousseJ2Prio1{
+    animation : secousse 5 0.05s alternate;
+    animation-delay: 1.5s;
+}
+
+@keyframes secousse{
     0%{
         transform: translateY(0px);
     }
     100%{
         transform: translateY(-10px);
     }
-}
-#infoJ2{
-    animation : bouton2 0.1s 10 alternate;
-}
-@keyframes bouton2{
+} */
+/* @keyframes secousse{
     0%{
         transform: translateY(0px);
     }
     100%{
         transform: translateY(-10px);
     }
-}
+} */

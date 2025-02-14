@@ -246,7 +246,6 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
     recapBattleP.insertBefore(recapBattleDiv, recapBattleB);
     addUl();
     if (j1[0].pv>0 && j2[0].pv>0){ //? vérif des pv 
-        // addLi(`tour ${tour+=1}\n`)
         if (j1[0].vit>j2[0].vit){ //? vérif des vit (dans ce if j1 agira en premier)
             choixJ1(j1,j2); //? attaque de j1
             if(j2[0].pv<=0){ //? vérif si j2 est mort
@@ -254,7 +253,7 @@ function priorite(j1,choixJ1,j2,choixJ2){ //? ici on récoupère les fonctions s
             // console.log(j1[0].nom,"a vaincu",j2[0].nom,"!");
             recapBattle.innerText+=`${j1[0].nom} a vaincu ${j2[0].nom}!\n`;
             addLi(`${j1[0].nom} a vaincu ${j2[0].nom}!\n`);
-            
+            secousseJ2prio2();
             } 
             else {
                 choixJ2(j2,j1); //? attaque de j2
@@ -429,4 +428,31 @@ bouleDeFeuButtonJ2.addEventListener("click",()=>{
     bouleDeFeuSelected(nomAttaqueJ1);
     readyCheckJ2();
     disabledBattle();
+});
+//! animations
+boutonBattle.addEventListener("click",()=>{
+    setTimeout(()=>{
+        infoJ1.animate(
+            [
+                {transform: "translateY(10px)"},
+                {transform: "translateY(-10px)"},
+            ],
+            {
+            duration: 100,
+            iterations: 5,
+            }
+        );
+    },1500);
+    setTimeout(()=>{
+        infoJ2.animate(
+            [
+                {transform: "translateY(10px)"},
+                {transform: "translateY(-10px)"},
+            ],
+            {
+            duration: 100,
+            iterations: 5,
+            }
+        );
+    },1000);
 });
