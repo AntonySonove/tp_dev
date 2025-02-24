@@ -10,3 +10,5 @@
     <header>
         <h1>DASHBORD</h1>
     </header>
+</body>
+</html>

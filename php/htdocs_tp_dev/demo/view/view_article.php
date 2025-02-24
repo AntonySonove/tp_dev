@@ -1,4 +1,4 @@
 <main>
-    <h2>Liste des articles</h2>
+    <h1>Liste des articles</h1>
     <?=$articleList?>
 </main>
