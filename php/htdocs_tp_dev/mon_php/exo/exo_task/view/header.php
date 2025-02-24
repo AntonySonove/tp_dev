@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?="$title"?></title>
+    <title>task</title>
     <link rel="stylesheet" href="./src/style/style.css">
 </head>
 <body>
     <header>
-        <h1>DASHBORD</h1>
+        <h1>task</h1>
     </header>
+    
