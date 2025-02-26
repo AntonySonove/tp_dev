@@ -19,20 +19,19 @@
             $req=$bdd->prepare("SELECT name_task, content_task, date_task FROM tasks");
             $req->execute();
             $data=$req->fetchAll();
-            return $data;
-            
+            return $data;   
         }catch(PDOException $error){
             return $error->getMessage();
         }
     }
-    function addCategory($bdd){
-        try{
-            $req=$bdd->prepare("SELECT name_category FROM categories WHERE id_category=1");
-            $req->execute();
-            $data=$req->fetchAll();
-            return $data;
-        }catch(PDOException $error){
-            return $error->getMessage();
-        }
-    } 
+    // function addCategory($bdd){
+    //     try{
+    //         $req=$bdd->prepare("SELECT name_category FROM categories WHERE id_category=1");
+    //         $req->execute();
+    //         $data=$req->fetchAll();
+    //         return $data;
+    //     }catch(PDOException $error){
+    //         return $error->getMessage();
+    //     }
+    // } 
 ?>

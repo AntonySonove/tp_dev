@@ -13,9 +13,9 @@
             <?= $taskList ?>
         </div>
     </div>
-    <div>
+    <!-- <div>
         <select name="categories" id="categories">
             <option value="<?= $menage ?>">ménage</option>
-        </select>
+        </select> -->
     </div>
 </main>

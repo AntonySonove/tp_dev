@@ -2,11 +2,6 @@
     include "./model/model_accueil.php";
     include "./utils/functions.php";
     //* variables
-    $name="";
-    $firstName="";
-    $email="";
-    $password;
-    $password2;
     $message="";
     $userList="";
 
@@ -37,16 +32,18 @@
             }else{
                 $message= "<p style='color:red'>*Veuillez remplir les champs obligatoires</p>";
             }
-            $userList=userAll($bdd);
         }
-        //* faire la boucle sur le tableau pour créer les li
+        //* faire la boucle sur le tableau
         $bdd=dbConnect();
         $data=userAll($bdd);
         foreach($data as $user){
-            $userList=$userList."<div style='border-bottom:1px solid black'><ul><li style='list-style:none'><p>Nom : <span style='font-weight:bold'>".$user["name_user"]."</span></p><p>Prénom : <span style='font-weight:bold'>".$user["firstname_user"]."</span></p><p>E-mail : <span style='font-weight:bold'>".$user["email_user"]."</span></p></li></ul></div>";
+            $userList=$userList."<div style='border-bottom:1px solid black'>
+            <p>Nom : <span style='font-weight:bold'>".$user["name_user"]."</span></p>
+            <p>Prénom : <span style='font-weight:bold'>".$user["firstname_user"]."</span></p>
+            <p>E-mail : <span style='font-weight:bold'>".$user["email_user"]."</span></p>
+            </div>";
             }
-
-    include "./view/header.php";
+    include "./controller_header.php";
     include "./view/view_accueil.php";
     include "./view/footer.php";
 ?>

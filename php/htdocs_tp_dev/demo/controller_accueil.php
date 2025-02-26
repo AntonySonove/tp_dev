@@ -4,6 +4,7 @@
     //* variables d'affichage
     $message="";
     $title="Ajouter un nouvel article";
+    $articleList="";
 
     if (isset($_POST["submit"])){
         //* vérifier que les données ne sont pas vides
@@ -11,12 +12,11 @@
             //* vérifier le format des données
             if(filter_var($_POST["prix_article"], FILTER_VALIDATE_INT)){
                 //? nettoyer les données
-                $name=nettoyage($_POST["nom_article"]);
-                $content=nettoyage($_POST["contenu_article"]);
-                $prix=nettoyage($_POST["prix_article"]);
+                $name=sanitize($_POST["nom_article"]);
+                $content=sanitize($_POST["contenu_article"]);
+                $prix=sanitize($_POST["prix_article"]);
                 $bdd=dbConnect();
-                $message=articleAdd($name, $content, $prix, $bdd);
-
+                $message=articleAdd($bdd, $name, $content, $prix);
             }else{
                 $message="Veuillez saisir un prix";
             }

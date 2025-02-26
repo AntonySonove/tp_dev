@@ -22,15 +22,18 @@
     $bdd=dbConnect();
     $data=taskAll($bdd);
     foreach($data as $task){
-        $taskList=$taskList."<div style='border-bottom:1px solid black'><ul><li style='list-style:none'><p>Nom : <span style='font-weight:bold'>".$task["name_task"]."</span></p><p>Description : <span style='font-weight:bold'>".$task["content_task"]."</span></p><p>Le : <span style='font-weight:bold'>".$task["date_task"]."</span></p></li></ul></div>";
+        $taskList=$taskList."<div style='border-bottom:1px solid black'>
+        <p>Nom : <span style='font-weight:bold'>".$task["name_task"]."</span></p>
+        <p>Description : <span style='font-weight:bold'>".$task["content_task"]."</span></p>
+        <p>Le : <span style='font-weight:bold'>".$task["date_task"]."</span></p></div>";
     }
-    $bdd=dbConnect();
-    $data=addCategory($bdd);
+    // $bdd=dbConnect();
+    // $data=addCategory($bdd);
     // print_r($data);
-    $menage=$data[0]["name_category"];
+    // $menage=$data[0]["name_category"];
     // echo $menage;
     
-    include "./view/header.php";
+    include "./controller_header.php";
     include "./view/view_task.php";
     include "./view/footer.php";
 ?>

@@ -25,4 +25,5 @@ ALTER TABLE tasks
 ALTER TABLE tasks
 	ADD CONSTRAINT fk_users
     FOREIGN KEY (id_user) REFERENCES users (id_user);
+INSERT INTO categories (name_category) VALUE ("ménage"),("courses");
 -- DROP DATABASE tasks;

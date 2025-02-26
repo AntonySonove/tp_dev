@@ -42,4 +42,3 @@ ALTER TABLE characters_stuffs
 ALTER TABLE characters_stuffs
 	ADD CONSTRAINT fk_stuffs
     FOREIGN KEY (id_stuff) REFERENCES stuffs (id_stuff);
--- DROP DATABASE epic_jdr;

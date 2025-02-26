@@ -9,5 +9,9 @@
 <body>
     <header>
         <h1>task</h1>
+        <a href="controller_accueil.php">Accueil</a>
+        <?= $nav ?>
+       <!-- <a href="controller_compte.php">Mon compte</a>
+        <a href="controller_compte.php">Mon compte</a> -->
     </header>
     

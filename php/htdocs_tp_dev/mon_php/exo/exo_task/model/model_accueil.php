@@ -28,7 +28,6 @@ function addUser($bdd, $name, $firstName, $email, $password,){
     return $message;
     }
 function userAll($bdd){
-    $userList="";
      //* préparer, executer et récupérer les données de la bdd pour la requête d'affichage des utilisateurs
      try{
         $req=$bdd->prepare("SELECT name_user, firstname_user, email_user FROM users");
